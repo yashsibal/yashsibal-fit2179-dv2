@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FBF7EF",
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "labelColor": "#1F2937",
+      "titleColor": "#111827",
+      "gridColor": "#E5E7EB",
+      "domainColor": "#CBD5E1",
+      "tickColor": "#CBD5E1"
+    },
+    "legend": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "orient": "bottom",
+      "labelLimit": 160
+    },
+    "title": {
+      "font": "Inter, Arial, sans-serif",
+      "fontSize": 16,
+      "subtitleFont": "Inter, Arial, sans-serif",
+      "subtitleFontSize": 12,
+      "anchor": "start",
+      "color": "#111827",
+      "subtitleColor": "#4B5563"
+    },
+    "bar": {
+      "cornerRadiusEnd": 4
+    }
+  },
+  "title": {
+    "text": "Participation is high across Australia, but the ACT stands out",
+    "subtitle": "Adult participation at least once per year by state/territory, AusPlay Jan-Dec 2025"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.min.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "width": "container",
+  "height": 420,
+  "projection": {
+    "type": "mercator"
+  },
+  "transform": [
+    {
+      "lookup": "properties.STATE_NAME",
+      "from": {
+        "data": {
+          "url": "data/state_participation.csv"
+        },
+        "key": "state_name",
+        "fields": [
+          "state_abbr",
+          "participation_rate_pct",
+          "estimated_adult_participants"
+        ]
+      }
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 1.1,
+    "tooltip": true
+  },
+  "encoding": {
+    "color": {
+      "field": "participation_rate_pct",
+      "type": "quantitative",
+      "title": "Participation rate (%)",
+      "scale": {
+        "scheme": "greens"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.STATE_NAME",
+        "title": "State/Territory"
+      },
+      {
+        "field": "state_abbr",
+        "title": "Abbr."
+      },
+      {
+        "field": "participation_rate_pct",
+        "title": "Participation rate (%)",
+        "format": ".1f"
+      },
+      {
+        "field": "estimated_adult_participants",
+        "title": "Estimated adult participants",
+        "format": ","
+      }
+    ]
+  }
+}

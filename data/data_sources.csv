@@ -1,0 +1,5 @@
+source,file,url,used_for
+"Australian Sports Commission, AusPlay By Sport Data Tables",C4S-AusPlay-By-Sport-Data-Tables-30-April-2026(1).xlsx,https://www.ausport.gov.au/clearinghouse/research/ausplay/results/data-tables,"Activity-level adult participation rates, gender rates, age rates and estimated participant numbers."
+"Australian Sports Commission, AusPlay National Data Tables",C4S-AusPlay-National-Data-Tables-30-April-2026(1).xlsx,https://www.ausport.gov.au/clearinghouse/research/ausplay/results/data-tables,Sport/non-sport participation categories and state/territory participation.
+"Australian Bureau of Statistics, National, state and territory population, Sep 2025",31010do001_202509.xlsx,https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release,"State and territory total population, September 2025."
+rowanhogan/australian-states GeoJSON,External GeoJSON URL,https://github.com/rowanhogan/australian-states,Australia state/territory boundary shapes for the choropleth map.

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FBF7EF",
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "labelColor": "#1F2937",
+      "titleColor": "#111827",
+      "gridColor": "#E5E7EB",
+      "domainColor": "#CBD5E1",
+      "tickColor": "#CBD5E1"
+    },
+    "legend": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "orient": "bottom",
+      "labelLimit": 160
+    },
+    "title": {
+      "font": "Inter, Arial, sans-serif",
+      "fontSize": 16,
+      "subtitleFont": "Inter, Arial, sans-serif",
+      "subtitleFontSize": 12,
+      "anchor": "start",
+      "color": "#111827",
+      "subtitleColor": "#4B5563"
+    },
+    "bar": {
+      "cornerRadiusEnd": 4
+    }
+  },
+  "title": {
+    "text": "Each activity has a different life-stage profile",
+    "subtitle": "Participation rate by age group for selected activities"
+  },
+  "data": {
+    "url": "data/age_profiles.csv"
+  },
+  "width": 145,
+  "height": 110,
+  "facet": {
+    "field": "activity",
+    "type": "nominal",
+    "columns": 4,
+    "title": null
+  },
+  "spec": {
+    "mark": {
+      "type": "line",
+      "point": true,
+      "tooltip": true,
+      "color": "#0F766E"
+    },
+    "encoding": {
+      "x": {
+        "field": "age_group",
+        "type": "ordinal",
+        "sort": [
+          "15-17",
+          "18-24",
+          "25-34",
+          "35-44",
+          "45-54",
+          "55-64",
+          "65+"
+        ],
+        "title": null,
+        "axis": {
+          "labelAngle": -35,
+          "labelFontSize": 9
+        }
+      },
+      "y": {
+        "field": "participation_rate_pct",
+        "type": "quantitative",
+        "title": "%",
+        "axis": {
+          "labelFontSize": 9
+        }
+      },
+      "tooltip": [
+        {
+          "field": "activity",
+          "title": "Activity"
+        },
+        {
+          "field": "age_group",
+          "title": "Age group"
+        },
+        {
+          "field": "participation_rate_pct",
+          "title": "Participation rate (%)",
+          "format": ".1f"
+        }
+      ]
+    }
+  },
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  }
+}
