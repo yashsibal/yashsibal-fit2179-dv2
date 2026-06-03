@@ -1,0 +1,112 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FBF7EF",
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "labelColor": "#1F2937",
+      "titleColor": "#111827",
+      "gridColor": "#E5E7EB",
+      "domainColor": "#CBD5E1",
+      "tickColor": "#CBD5E1"
+    },
+    "legend": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "orient": "bottom",
+      "labelLimit": 160
+    },
+    "title": {
+      "font": "Inter, Arial, sans-serif",
+      "fontSize": 16,
+      "subtitleFont": "Inter, Arial, sans-serif",
+      "subtitleFontSize": 12,
+      "anchor": "start",
+      "color": "#111827",
+      "subtitleColor": "#4B5563"
+    },
+    "bar": {
+      "cornerRadiusEnd": 4
+    }
+  },
+  "title": {
+    "text": "Age changes the activity mix",
+    "subtitle": "Darker cells show higher adult participation rates within each activity and age group"
+  },
+  "data": {
+    "url": "data/activity_by_age.csv"
+  },
+  "width": "container",
+  "height": 390,
+  "mark": {
+    "type": "rect",
+    "tooltip": true
+  },
+  "encoding": {
+    "y": {
+      "field": "activity",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Walking",
+        "Fitness/Gym",
+        "Running/jogging",
+        "Swimming",
+        "Cycling",
+        "Football/soccer",
+        "Basketball",
+        "Tennis",
+        "Australian football",
+        "Cricket",
+        "Netball",
+        "Yoga",
+        "Pilates"
+      ]
+    },
+    "x": {
+      "field": "age_group",
+      "type": "ordinal",
+      "title": "Age group",
+      "sort": [
+        "15-17",
+        "18-24",
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65+"
+      ]
+    },
+    "color": {
+      "field": "participation_rate_pct",
+      "type": "quantitative",
+      "title": "Participation rate (%)",
+      "scale": {
+        "scheme": "tealblues"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "activity",
+        "title": "Activity"
+      },
+      {
+        "field": "age_group",
+        "title": "Age group"
+      },
+      {
+        "field": "participation_rate_pct",
+        "title": "Participation rate (%)",
+        "format": ".1f"
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FBF7EF",
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "labelColor": "#1F2937",
+      "titleColor": "#111827",
+      "gridColor": "#E5E7EB",
+      "domainColor": "#CBD5E1",
+      "tickColor": "#CBD5E1"
+    },
+    "legend": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "orient": "bottom",
+      "labelLimit": 160
+    },
+    "title": {
+      "font": "Inter, Arial, sans-serif",
+      "fontSize": 16,
+      "subtitleFont": "Inter, Arial, sans-serif",
+      "subtitleFontSize": 12,
+      "anchor": "start",
+      "color": "#111827",
+      "subtitleColor": "#4B5563"
+    },
+    "bar": {
+      "cornerRadiusEnd": 4
+    }
+  },
+  "title": {
+    "text": "Most active adults include non-sport activities in their routine",
+    "subtitle": "Categories are not competing sports; they describe whether participation was sport-related, non-sport-related, or both."
+  },
+  "data": {
+    "url": "data/sport_non_sport_overall.csv"
+  },
+  "width": "container",
+  "height": 120,
+  "mark": {
+    "type": "bar",
+    "tooltip": true
+  },
+  "encoding": {
+    "y": {
+      "value": 50
+    },
+    "x": {
+      "field": "participation_rate_pct",
+      "type": "quantitative",
+      "stack": "zero",
+      "title": "Share of adult population (%)"
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "title": null,
+      "scale": {
+        "domain": [
+          "Sport-related only",
+          "Non-sport only",
+          "Both sport and non-sport"
+        ],
+        "range": [
+          "#2563EB",
+          "#10B981",
+          "#8B5CF6"
+        ]
+      }
+    },
+    "order": {
+      "field": "category",
+      "sort": "ascending"
+    },
+    "tooltip": [
+      {
+        "field": "category",
+        "title": "Category"
+      },
+      {
+        "field": "participation_rate_pct",
+        "title": "Participation rate (%)",
+        "format": ".1f"
+      }
+    ]
+  }
+}

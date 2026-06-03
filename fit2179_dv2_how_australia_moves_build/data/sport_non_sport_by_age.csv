@@ -1,0 +1,22 @@
+age_group,category,participation_rate_pct
+15-17,Sport-related only,22.61
+15-17,Non-sport only,12.78
+15-17,Both sport and non-sport,52.04
+18-24,Sport-related only,20.48
+18-24,Non-sport only,19.88
+18-24,Both sport and non-sport,48.38
+25-34,Sport-related only,17.77
+25-34,Non-sport only,24.69
+25-34,Both sport and non-sport,46.97
+35-44,Sport-related only,15.24
+35-44,Non-sport only,32.18
+35-44,Both sport and non-sport,41.28
+45-54,Sport-related only,11.11
+45-54,Non-sport only,40.2
+45-54,Both sport and non-sport,37.95
+55-64,Sport-related only,7.2
+55-64,Non-sport only,44.91
+55-64,Both sport and non-sport,35.34
+65+,Sport-related only,5.9
+65+,Non-sport only,48.54
+65+,Both sport and non-sport,20.99
