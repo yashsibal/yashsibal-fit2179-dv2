@@ -1,1 +1,0 @@
-The choropleth map loads a public Australia states GeoJSON from https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.min.geojson. Repository: https://github.com/rowanhogan/australian-states
