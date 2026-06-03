@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#FBF7EF",
+  "background": "transparent",
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -16,19 +16,23 @@
       "titleColor": "#111827",
       "gridColor": "#E5E7EB",
       "domainColor": "#CBD5E1",
-      "tickColor": "#CBD5E1"
+      "tickColor": "#CBD5E1",
+      "labelFontSize": 11,
+      "titleFontSize": 11
     },
     "legend": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
       "orient": "bottom",
-      "labelLimit": 160
+      "labelLimit": 160,
+      "labelFontSize": 10,
+      "titleFontSize": 10
     },
     "title": {
       "font": "Inter, Arial, sans-serif",
-      "fontSize": 16,
+      "fontSize": 15,
       "subtitleFont": "Inter, Arial, sans-serif",
-      "subtitleFontSize": 12,
+      "subtitleFontSize": 11,
       "anchor": "start",
       "color": "#111827",
       "subtitleColor": "#4B5563"
@@ -44,12 +48,12 @@
   "data": {
     "url": "data/age_profiles.csv"
   },
-  "width": 145,
-  "height": 110,
+  "width": 130,
+  "height": 95,
   "facet": {
     "field": "activity",
     "type": "nominal",
-    "columns": 4,
+    "columns": 3,
     "title": null
   },
   "spec": {
@@ -75,7 +79,8 @@
         "title": null,
         "axis": {
           "labelAngle": -35,
-          "labelFontSize": 9
+          "labelFontSize": 8,
+          "title": null
         }
       },
       "y": {
@@ -83,7 +88,8 @@
         "type": "quantitative",
         "title": "%",
         "axis": {
-          "labelFontSize": 9
+          "labelFontSize": 8,
+          "title": "%"
         }
       },
       "tooltip": [

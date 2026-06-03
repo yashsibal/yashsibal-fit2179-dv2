@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#FBF7EF",
+  "background": "transparent",
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -16,19 +16,23 @@
       "titleColor": "#111827",
       "gridColor": "#E5E7EB",
       "domainColor": "#CBD5E1",
-      "tickColor": "#CBD5E1"
+      "tickColor": "#CBD5E1",
+      "labelFontSize": 11,
+      "titleFontSize": 11
     },
     "legend": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
       "orient": "bottom",
-      "labelLimit": 160
+      "labelLimit": 160,
+      "labelFontSize": 10,
+      "titleFontSize": 10
     },
     "title": {
       "font": "Inter, Arial, sans-serif",
-      "fontSize": 16,
+      "fontSize": 15,
       "subtitleFont": "Inter, Arial, sans-serif",
-      "subtitleFontSize": 12,
+      "subtitleFontSize": 11,
       "anchor": "start",
       "color": "#111827",
       "subtitleColor": "#4B5563"
@@ -39,7 +43,7 @@
   },
   "title": {
     "text": "Traditional sports still matter, but sit below the biggest fitness activities",
-    "subtitle": "Selected traditional sports ranked by adult participation"
+    "subtitle": "Selected traditional sports ranked by adult participation, AusPlay Jan-Dec 2025"
   },
   "data": {
     "url": "data/traditional_sports.csv"
@@ -63,7 +67,8 @@
           "title": null
         },
         "x": {
-          "value": 0
+          "datum": 0,
+          "type": "quantitative"
         },
         "x2": {
           "field": "participation_rate_pct"
@@ -74,7 +79,7 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 110,
+        "size": 120,
         "color": "#2563EB",
         "tooltip": true
       },
@@ -88,7 +93,13 @@
         "x": {
           "field": "participation_rate_pct",
           "type": "quantitative",
-          "title": "Adult participation rate (%)"
+          "title": "Adult participation rate (%)",
+          "scale": {
+            "domain": [
+              0,
+              7
+            ]
+          }
         },
         "tooltip": [
           {
@@ -106,6 +117,31 @@
             "format": ","
           }
         ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 11,
+        "color": "#475569"
+      },
+      "encoding": {
+        "y": {
+          "field": "activity",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null
+        },
+        "x": {
+          "field": "participation_rate_pct",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "participation_rate_pct",
+          "format": ".1f"
+        }
       }
     }
   ],

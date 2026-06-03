@@ -14,7 +14,7 @@ Participation rates by individual activity are not mutually exclusive. A single 
 - `flexible_activities.csv`: Selected flexible lifestyle/fitness activities.
 - `traditional_sports.csv`: Selected traditional sport activities.
 - `activity_by_age.csv`: Selected activities by age group for the heatmap.
-- `state_participation.csv`: Adult participation rate and estimated adult participants by state/territory.
+- `state_participation.csv`: Adult participation rate and estimated adult participants by state/territory, with approximate longitude/latitude positions for the symbol map.
 - `state_population_participation.csv`: State/territory population from ABS combined with AusPlay participation rates.
 - `gender_by_activity.csv`: Male and female participation rates by selected activity.
 - `age_profiles.csv`: Age profiles for small multiples.

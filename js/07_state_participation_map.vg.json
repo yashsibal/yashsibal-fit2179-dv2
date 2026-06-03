@@ -1,10 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#FBF7EF",
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
+  "background": "transparent",
   "config": {
     "view": {
       "stroke": null
@@ -16,19 +12,23 @@
       "titleColor": "#111827",
       "gridColor": "#E5E7EB",
       "domainColor": "#CBD5E1",
-      "tickColor": "#CBD5E1"
+      "tickColor": "#CBD5E1",
+      "labelFontSize": 11,
+      "titleFontSize": 11
     },
     "legend": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
       "orient": "bottom",
-      "labelLimit": 160
+      "labelLimit": 160,
+      "labelFontSize": 10,
+      "titleFontSize": 10
     },
     "title": {
       "font": "Inter, Arial, sans-serif",
-      "fontSize": 16,
+      "fontSize": 15,
       "subtitleFont": "Inter, Arial, sans-serif",
-      "subtitleFontSize": 12,
+      "subtitleFontSize": 11,
       "anchor": "start",
       "color": "#111827",
       "subtitleColor": "#4B5563"
@@ -38,71 +38,113 @@
     }
   },
   "title": {
-    "text": "Participation is high across Australia, but the ACT stands out",
-    "subtitle": "Adult participation at least once per year by state/territory, AusPlay Jan-Dec 2025"
+    "text": "A projected map of adult participation",
+    "subtitle": "Circle colour shows participation rate; circle size shows estimated adult participants"
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.min.geojson",
-    "format": {
-      "type": "json",
-      "property": "features"
-    }
+    "url": "data/state_participation.csv"
   },
   "width": "container",
-  "height": 420,
+  "height": 360,
   "projection": {
-    "type": "mercator"
+    "type": "mercator",
+    "center": [
+      134,
+      -28
+    ],
+    "scale": 650
   },
-  "transform": [
+  "layer": [
     {
-      "lookup": "properties.STATE_NAME",
-      "from": {
-        "data": {
-          "url": "data/state_participation.csv"
+      "mark": {
+        "type": "circle",
+        "opacity": 0.9,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.5,
+        "tooltip": true
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
         },
-        "key": "state_name",
-        "fields": [
-          "state_abbr",
-          "participation_rate_pct",
-          "estimated_adult_participants"
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "estimated_adult_participants",
+          "type": "quantitative",
+          "title": "Estimated adult participants",
+          "scale": {
+            "range": [
+              180,
+              3200
+            ]
+          }
+        },
+        "color": {
+          "field": "participation_rate_pct",
+          "type": "quantitative",
+          "title": "Participation rate (%)",
+          "scale": {
+            "domain": [
+              83,
+              93
+            ],
+            "scheme": "tealblues"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "title": "State/Territory"
+          },
+          {
+            "field": "participation_rate_pct",
+            "title": "Participation rate (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "estimated_adult_participants",
+            "title": "Estimated adult participants",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "dy": -16,
+        "color": "#111827"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state_abbr"
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "title": "State/Territory"
+          },
+          {
+            "field": "participation_rate_pct",
+            "title": "Participation rate (%)",
+            "format": ".1f"
+          }
         ]
       }
     }
-  ],
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#FFFFFF",
-    "strokeWidth": 1.1,
-    "tooltip": true
-  },
-  "encoding": {
-    "color": {
-      "field": "participation_rate_pct",
-      "type": "quantitative",
-      "title": "Participation rate (%)",
-      "scale": {
-        "scheme": "greens"
-      }
-    },
-    "tooltip": [
-      {
-        "field": "properties.STATE_NAME",
-        "title": "State/Territory"
-      },
-      {
-        "field": "state_abbr",
-        "title": "Abbr."
-      },
-      {
-        "field": "participation_rate_pct",
-        "title": "Participation rate (%)",
-        "format": ".1f"
-      },
-      {
-        "field": "estimated_adult_participants",
-        "title": "Estimated adult participants",
-        "format": ","
-      }
-    ]
-  }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#FBF7EF",
+  "background": "transparent",
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -16,19 +16,23 @@
       "titleColor": "#111827",
       "gridColor": "#E5E7EB",
       "domainColor": "#CBD5E1",
-      "tickColor": "#CBD5E1"
+      "tickColor": "#CBD5E1",
+      "labelFontSize": 11,
+      "titleFontSize": 11
     },
     "legend": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
       "orient": "bottom",
-      "labelLimit": 160
+      "labelLimit": 160,
+      "labelFontSize": 10,
+      "titleFontSize": 10
     },
     "title": {
       "font": "Inter, Arial, sans-serif",
-      "fontSize": 16,
+      "fontSize": 15,
       "subtitleFont": "Inter, Arial, sans-serif",
-      "subtitleFontSize": 12,
+      "subtitleFontSize": 11,
       "anchor": "start",
       "color": "#111827",
       "subtitleColor": "#4B5563"
@@ -46,46 +50,92 @@
   },
   "width": "container",
   "height": {
-    "step": 32
+    "step": 34
   },
-  "mark": {
-    "type": "bar",
-    "tooltip": true,
-    "color": "#059669"
-  },
-  "encoding": {
-    "y": {
-      "field": "state_name",
-      "type": "nominal",
-      "sort": "-x",
-      "title": null
-    },
-    "x": {
-      "field": "participation_rate_pct",
-      "type": "quantitative",
-      "title": "Participation rate (%)",
-      "scale": {
-        "domain": [
-          80,
-          95
-        ]
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "tooltip": true,
+        "cornerRadiusEnd": 5
+      },
+      "encoding": {
+        "y": {
+          "field": "state_name",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null
+        },
+        "x": {
+          "field": "participation_rate_pct",
+          "type": "quantitative",
+          "title": "Participation rate (%)",
+          "scale": {
+            "domain": [
+              82,
+              94
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "title": "State/Territory"
+          },
+          {
+            "field": "participation_rate_pct",
+            "title": "Participation rate (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "estimated_adult_participants",
+            "title": "Estimated adult participants",
+            "format": ","
+          }
+        ],
+        "color": {
+          "field": "state_abbr",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "range": [
+              "#0f766e",
+              "#2563eb",
+              "#f59e0b",
+              "#10b981",
+              "#64748b",
+              "#8b5cf6",
+              "#db2777",
+              "#14b8a6"
+            ]
+          }
+        }
       }
     },
-    "tooltip": [
-      {
-        "field": "state_name",
-        "title": "State/Territory"
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 11,
+        "color": "#475569"
       },
-      {
-        "field": "participation_rate_pct",
-        "title": "Participation rate (%)",
-        "format": ".1f"
-      },
-      {
-        "field": "estimated_adult_participants",
-        "title": "Estimated adult participants",
-        "format": ","
+      "encoding": {
+        "y": {
+          "field": "state_name",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null
+        },
+        "x": {
+          "field": "participation_rate_pct",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "participation_rate_pct",
+          "format": ".1f"
+        }
       }
-    ]
-  }
+    }
+  ]
 }

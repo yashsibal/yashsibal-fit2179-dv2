@@ -1,9 +1,9 @@
-state_abbr,state_name,participation_rate_pct,estimated_adult_participants
-ACT,Australian Capital Territory,92.24,367094
-NSW,New South Wales,85.41,6028038
-NT,Northern Territory,89.34,186157
-QLD,Queensland,83.92,3882805
-SA,South Australia,84.3,1332909
-TAS,Tasmania,86.96,420327
-VIC,Victoria,87.46,5082762
-WA,Western Australia,86.81,2143227
+state_abbr,state_name,participation_rate_pct,estimated_adult_participants,longitude,latitude
+ACT,Australian Capital Territory,92.24,367094,149.13,-35.28
+NSW,New South Wales,85.41,6028038,151.21,-33.87
+NT,Northern Territory,89.34,186157,130.84,-12.46
+QLD,Queensland,83.92,3882805,153.03,-27.47
+SA,South Australia,84.3,1332909,138.6,-34.93
+TAS,Tasmania,86.96,420327,147.33,-42.88
+VIC,Victoria,87.46,5082762,144.96,-37.81
+WA,Western Australia,86.81,2143227,115.86,-31.95

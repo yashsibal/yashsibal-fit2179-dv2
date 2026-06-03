@@ -1,10 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#FBF7EF",
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
+  "background": "transparent",
   "config": {
     "view": {
       "stroke": null
@@ -16,19 +12,23 @@
       "titleColor": "#111827",
       "gridColor": "#E5E7EB",
       "domainColor": "#CBD5E1",
-      "tickColor": "#CBD5E1"
+      "tickColor": "#CBD5E1",
+      "labelFontSize": 11,
+      "titleFontSize": 11
     },
     "legend": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
       "orient": "bottom",
-      "labelLimit": 160
+      "labelLimit": 160,
+      "labelFontSize": 10,
+      "titleFontSize": 10
     },
     "title": {
       "font": "Inter, Arial, sans-serif",
-      "fontSize": 16,
+      "fontSize": 15,
       "subtitleFont": "Inter, Arial, sans-serif",
-      "subtitleFontSize": 12,
+      "subtitleFontSize": 11,
       "anchor": "start",
       "color": "#111827",
       "subtitleColor": "#4B5563"
@@ -41,78 +41,115 @@
     "text": "The final picture: sport and fitness sit on a participation spectrum",
     "subtitle": "Circle size shows adult participation rate; position is a derived storytelling classification."
   },
-  "data": {
-    "url": "data/sport_fitness_spectrum.csv"
-  },
   "width": "container",
-  "height": 230,
+  "height": 260,
   "layer": [
     {
+      "data": {
+        "values": [
+          {
+            "x1": 1,
+            "x2": 10,
+            "y": 100
+          }
+        ]
+      },
       "mark": {
         "type": "rule",
         "stroke": "#CBD5E1",
-        "strokeWidth": 5
+        "strokeWidth": 6
       },
       "encoding": {
         "x": {
-          "datum": 1
+          "field": "x1",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0.5,
+              10.5
+            ]
+          },
+          "axis": null
         },
         "x2": {
-          "datum": 10
+          "field": "x2"
         },
         "y": {
-          "datum": 100
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              70,
+              130
+            ]
+          },
+          "axis": null
         }
       }
     },
     {
+      "data": {
+        "values": [
+          {
+            "x": 1.25,
+            "y": 119,
+            "label": "Traditional organised sport",
+            "colour": "#2563EB"
+          },
+          {
+            "x": 8.75,
+            "y": 119,
+            "label": "Flexible lifestyle fitness",
+            "colour": "#0f766e"
+          }
+        ]
+      },
       "mark": {
         "type": "text",
         "fontSize": 12,
-        "fontWeight": "bold",
-        "dy": -58
+        "fontWeight": "bold"
       },
       "encoding": {
         "x": {
-          "datum": 1.2
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0.5,
+              10.5
+            ]
+          },
+          "axis": null
         },
         "y": {
-          "datum": 100
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              70,
+              130
+            ]
+          },
+          "axis": null
         },
         "text": {
-          "value": "Traditional organised sport"
+          "field": "label"
         },
         "color": {
-          "value": "#2563EB"
+          "field": "colour",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
         }
       }
     },
     {
-      "mark": {
-        "type": "text",
-        "fontSize": 12,
-        "fontWeight": "bold",
-        "dy": -58
+      "data": {
+        "url": "data/sport_fitness_spectrum.csv"
       },
-      "encoding": {
-        "x": {
-          "datum": 8.8
-        },
-        "y": {
-          "datum": 100
-        },
-        "text": {
-          "value": "Flexible lifestyle fitness"
-        },
-        "color": {
-          "value": "#10B981"
-        }
-      }
-    },
-    {
       "mark": {
         "type": "circle",
-        "opacity": 0.85,
+        "opacity": 0.86,
         "stroke": "#FFFFFF",
         "strokeWidth": 1.2,
         "tooltip": true
@@ -123,8 +160,8 @@
           "type": "quantitative",
           "scale": {
             "domain": [
-              0.7,
-              10.3
+              0.5,
+              10.5
             ]
           },
           "axis": null
@@ -132,6 +169,12 @@
         "y": {
           "datum": 100,
           "type": "quantitative",
+          "scale": {
+            "domain": [
+              70,
+              130
+            ]
+          },
           "axis": null
         },
         "size": {
@@ -141,7 +184,7 @@
           "scale": {
             "range": [
               100,
-              3600
+              4000
             ]
           }
         },
@@ -167,7 +210,7 @@
           },
           {
             "field": "side",
-            "title": "Side"
+            "title": "Type"
           },
           {
             "field": "participation_rate_pct",
@@ -183,11 +226,15 @@
       }
     },
     {
+      "data": {
+        "url": "data/sport_fitness_spectrum.csv"
+      },
       "mark": {
         "type": "text",
-        "dy": 55,
+        "dy": 58,
         "fontSize": 10,
-        "baseline": "top"
+        "baseline": "top",
+        "color": "#111827"
       },
       "encoding": {
         "x": {
@@ -195,8 +242,8 @@
           "type": "quantitative",
           "scale": {
             "domain": [
-              0.7,
-              10.3
+              0.5,
+              10.5
             ]
           },
           "axis": null
@@ -204,13 +251,16 @@
         "y": {
           "datum": 100,
           "type": "quantitative",
+          "scale": {
+            "domain": [
+              70,
+              130
+            ]
+          },
           "axis": null
         },
         "text": {
           "field": "activity"
-        },
-        "color": {
-          "value": "#111827"
         }
       }
     }
