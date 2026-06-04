@@ -53,8 +53,8 @@
     }
   },
   "title": {
-    "text": "The final picture: sport and fitness sit on a spectrum",
-    "subtitle": "Circle size shows adult participation rate; position is a derived storytelling classification"
+    "text": "The participation landscape stretches from club sport to everyday fitness",
+    "subtitle": "Custom spectrum: position is derived, circle size uses AusPlay participation rate"
   },
   "width": "container",
   "height": 310,
@@ -64,12 +64,12 @@
         "values": [
           {
             "x": 0.8,
-            "y": 1.0,
+            "y": 1,
             "order": 1
           },
           {
-            "x": 10.0,
-            "y": 1.0,
+            "x": 10,
+            "y": 1,
             "order": 2
           }
         ]
@@ -113,7 +113,7 @@
       "data": {
         "values": [
           {
-            "x": 1.0,
+            "x": 1,
             "y": 1.36,
             "label": "Traditional organised sport"
           },
@@ -163,7 +163,7 @@
         "values": [
           {
             "activity": "Australian football",
-            "spectrum_score": 1.0,
+            "spectrum_score": 1,
             "participation_rate_pct": 2.42,
             "estimated_participants": 547129,
             "side": "Traditional sport",
@@ -354,7 +354,7 @@
         "values": [
           {
             "activity": "Australian football",
-            "spectrum_score": 1.0,
+            "spectrum_score": 1,
             "participation_rate_pct": 2.42,
             "estimated_participants": 547129,
             "side": "Traditional sport",

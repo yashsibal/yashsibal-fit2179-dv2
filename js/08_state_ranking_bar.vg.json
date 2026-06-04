@@ -53,8 +53,8 @@
     }
   },
   "title": {
-    "text": "The map pattern is clearer as a ranking",
-    "subtitle": "Adult participation at least once per year, state/territory comparison"
+    "text": "ACT leads the state and territory ranking",
+    "subtitle": "Adult participation at least once per year, AusPlay Jan-Dec 2025"
   },
   "data": {
     "values": [
@@ -147,8 +147,10 @@
   "layer": [
     {
       "mark": {
-        "type": "bar",
-        "tooltip": true
+        "type": "tick",
+        "thickness": 3,
+        "size": 22,
+        "color": "#94a3b8"
       },
       "encoding": {
         "y": {
@@ -166,7 +168,7 @@
           ],
           "title": null,
           "axis": {
-            "labelLimit": 180
+            "labelLimit": 190
           }
         },
         "x": {
@@ -177,13 +179,46 @@
             "domain": [
               82,
               94
-            ]
+            ],
+            "zero": false
           }
-        },
-        "color": {
-          "field": "state_abbr",
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 130,
+        "color": "#0f766e",
+        "tooltip": true
+      },
+      "encoding": {
+        "y": {
+          "field": "state_name",
           "type": "nominal",
-          "legend": null
+          "sort": [
+            "Australian Capital Territory",
+            "Northern Territory",
+            "Victoria",
+            "Tasmania",
+            "Western Australia",
+            "New South Wales",
+            "South Australia",
+            "Queensland"
+          ],
+          "title": null
+        },
+        "x": {
+          "field": "participation_rate_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              82,
+              94
+            ],
+            "zero": false
+          }
         },
         "tooltip": [
           {
@@ -198,7 +233,7 @@
           {
             "field": "estimated_adult_participants",
             "title": "Estimated adult participants",
-            "format": ","
+            "format": ",d"
           }
         ]
       }
@@ -207,7 +242,7 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 7,
+        "dx": 10,
         "fontSize": 11,
         "fontWeight": 800,
         "color": "#334155"
@@ -230,7 +265,14 @@
         },
         "x": {
           "field": "participation_rate_pct",
-          "type": "quantitative"
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              82,
+              94
+            ],
+            "zero": false
+          }
         },
         "text": {
           "field": "participation_rate_pct",

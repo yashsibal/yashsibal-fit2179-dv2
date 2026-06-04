@@ -53,8 +53,8 @@
     }
   },
   "title": {
-    "text": "Traditional sports remain visible, but smaller",
-    "subtitle": "Selected traditional sports ranked by adult participation"
+    "text": "Traditional sports are still culturally important, but lower in adult participation",
+    "subtitle": "Selected traditional sports ranked by adult participation rate"
   },
   "data": {
     "values": [
@@ -107,9 +107,11 @@
   "layer": [
     {
       "mark": {
-        "type": "rule",
-        "stroke": "#cbd5e1",
-        "strokeWidth": 3
+        "type": "bar",
+        "tooltip": true,
+        "cornerRadiusEnd": 7,
+        "height": 16,
+        "color": "#2563eb"
       },
       "encoding": {
         "y": {
@@ -125,40 +127,10 @@
             "Badminton",
             "Table tennis"
           ],
-          "title": null
-        },
-        "x": {
-          "datum": 0,
-          "type": "quantitative"
-        },
-        "x2": {
-          "field": "participation_rate_pct"
-        }
-      }
-    },
-    {
-      "mark": {
-        "type": "point",
-        "filled": true,
-        "size": 150,
-        "color": "#2563eb",
-        "tooltip": true
-      },
-      "encoding": {
-        "y": {
-          "field": "activity",
-          "type": "nominal",
-          "sort": [
-            "Football/soccer",
-            "Tennis",
-            "Basketball",
-            "Cricket",
-            "Australian football",
-            "Netball",
-            "Badminton",
-            "Table tennis"
-          ],
-          "title": null
+          "title": null,
+          "axis": {
+            "labelLimit": 170
+          }
         },
         "x": {
           "field": "participation_rate_pct",
@@ -167,7 +139,7 @@
           "scale": {
             "domain": [
               0,
-              6.2
+              6.5
             ]
           }
         },
@@ -184,7 +156,7 @@
           {
             "field": "estimated_participants",
             "title": "Estimated adult participants",
-            "format": ","
+            "format": ",d"
           }
         ]
       }
@@ -193,10 +165,10 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 8,
+        "dx": 7,
         "fontSize": 11,
-        "fontWeight": 700,
-        "color": "#475569"
+        "fontWeight": 800,
+        "color": "#334155"
       },
       "encoding": {
         "y": {

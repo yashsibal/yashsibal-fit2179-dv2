@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How Australia Moves | FIT2179 DV2</title>
+  <meta name="description" content="A Vega-Lite data visualisation story about Australian sport, fitness and physical activity participation." />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,29 +15,33 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main story</a>
+
   <header class="hero">
     <nav class="topbar" aria-label="Page navigation">
       <a href="#snapshot">Snapshot</a>
       <a href="#fitness">Fitness shift</a>
       <a href="#where">Map</a>
-      <a href="#who">Who</a>
+      <a href="#who">Demographics</a>
       <a href="#takeaway">Takeaway</a>
+      <a href="#sources">Sources</a>
     </nav>
 
-    <div class="hero-grid">
+    <div class="hero-panel">
       <div class="hero-copy">
-        <p class="eyebrow">FIT2179 Data Visualisation 2</p>
+        <p class="eyebrow">FIT2179 Data Visualisation 2 · Vega-Lite story</p>
         <h1>How Australia Moves</h1>
-        <p class="subtitle">Australia is still a sporting country, but AusPlay participation data shows a wider story: everyday fitness and flexible lifestyle activities are now central to how adults stay active.</p>
-        <div class="hero-actions">
-          <span>12 Vega-Lite visualisations</span>
-          <span>2 official data sources</span>
+        <p class="subtitle">Australia is still a sporting country, but the clearest adult participation story is now bigger than club sport. Walking, fitness/gym and other flexible activities dominate how Australians stay active.</p>
+        <div class="hero-actions" aria-label="Assignment compliance summary">
+          <span>12 Vega-Lite diagrams</span>
           <span>1 geographic map</span>
+          <span>2 official data sources</span>
         </div>
       </div>
+
       <aside class="question-card">
         <span class="card-label">Main question</span>
-        <p>Are Australians mainly participating through traditional organised sport, or through flexible activities like walking, gym and running?</p>
+        <p>Are Australians mainly moving through traditional organised sport, or through flexible activities that fit around everyday life?</p>
       </aside>
     </div>
 
@@ -49,138 +54,186 @@
     <p class="source-line">Primary data: Australian Sports Commission AusPlay Data Tables, January–December 2025. Population context: ABS National, state and territory population, September 2025.</p>
   </header>
 
-  <main>
+  <main id="main">
     <section class="framework" aria-label="What Why Who How summary">
       <article><span>What</span><p>Adult sport, fitness and physical activity participation, combined with state and territory population context.</p></article>
-      <article><span>Why</span><p>To show that the way Australians stay active is broader than club sport and competition.</p></article>
-      <article><span>Who</span><p>Average Australian viewers who want a clear, non-technical view of participation patterns.</p></article>
-      <article><span>How</span><p>Rankings, stacked bars, heatmaps, a map, scatterplot, diverging bars, small multiples and a custom spectrum.</p></article>
+      <article><span>Why</span><p>To show that Australian participation is broader than club sport, competition and organised teams.</p></article>
+      <article><span>Who</span><p>Average Australian viewers, using clear non-technical language and direct chart annotations.</p></article>
+      <article><span>How</span><p>Rankings, stacked bars, heatmaps, a projected map, scatterplot, diverging bars, small multiples and a custom spectrum.</p></article>
     </section>
 
-    <section class="story-section" id="snapshot">
-      <div class="section-intro">
+    <section class="editor-note">
+      <div>
+        <p class="section-kicker">Reading guide</p>
+        <h2>Every chart answers one part of the same story.</h2>
+      </div>
+      <p>This page moves from the national picture to activity type, geography and demographics. Participation rates are not mutually exclusive: one person can appear in several activities, so the goal is comparison, not adding percentages into a total.</p>
+    </section>
+
+    <section class="chapter" id="snapshot">
+      <div class="chapter-intro">
         <p class="section-kicker">01 / Activity snapshot</p>
         <h2>The biggest activities are not the classic club sports.</h2>
-        <p>Australia is often described through competitive sport culture. The participation data shows something more everyday: walking, fitness/gym and other flexible activities sit above traditional sports in adult participation.</p>
+        <p>Australia is often described through competitive sport culture. AusPlay shows a more everyday pattern: walking, fitness/gym, bush walking, running and swimming all sit above the major traditional team sports in adult participation.</p>
       </div>
 
-      <article class="chart-card hero-chart">
-        <div class="chart-meta"><span>Visualisation 1</span><strong>Top activities</strong></div>
-        <div id="chart1" class="chart"></div>
-        <p class="chart-caption">Activity rates are not mutually exclusive. One adult can appear in multiple activities.</p>
+      <article class="chart-card feature-card">
+        <div class="chart-header">
+          <div><span>Visualisation 1</span><h3>Top adult activities</h3></div>
+          <p>Horizontal ranking · participation rate</p>
+        </div>
+        <div id="chart1" class="chart chart-large"></div>
+        <div class="insight-row">
+          <p><strong>Key read:</strong> Walking is the clear leader at 50.2%, followed by fitness/gym at 34.1%.</p>
+          <p><strong>Design choice:</strong> A horizontal bar chart makes long activity labels readable and rankings immediate.</p>
+        </div>
       </article>
 
-      <div class="grid-two">
+      <div class="story-grid two-col">
         <article class="chart-card">
-          <div class="chart-meta"><span>Visualisation 2</span><strong>Sport vs non-sport</strong></div>
-          <div id="chart2" class="chart short-chart"></div>
-          <p class="chart-caption">AusPlay separates adults by whether their participation was sport-related, non-sport-related, or both.</p>
+          <div class="chart-header"><div><span>Visualisation 2</span><h3>Sport vs non-sport participation</h3></div><p>Stacked bar · part-to-whole</p></div>
+          <div id="chart2" class="chart chart-compact"></div>
+          <p class="chart-caption">The largest share is adults who participated in both sport and non-sport activities, but non-sport-only participation is much larger than sport-only participation.</p>
         </article>
+
         <article class="chart-card">
-          <div class="chart-meta"><span>Visualisation 3</span><strong>Age balance</strong></div>
-          <div id="chart3" class="chart"></div>
-          <p class="chart-caption">The balance shifts with age: older adults lean much more strongly toward non-sport activity.</p>
+          <div class="chart-header"><div><span>Visualisation 3</span><h3>Activity type by age</h3></div><p>Stacked bars · age comparison</p></div>
+          <div id="chart3" class="chart chart-medium"></div>
+          <p class="chart-caption">Older adult groups become more non-sport oriented, which supports the broader fitness and lifestyle argument.</p>
         </article>
       </div>
     </section>
 
-    <section class="story-section" id="fitness">
-      <div class="section-intro">
+    <section class="chapter" id="fitness">
+      <div class="chapter-intro">
         <p class="section-kicker">02 / Fitness shift</p>
         <h2>Flexible fitness is the everyday option.</h2>
-        <p>Activities such as walking, gym, running and swimming are easier to fit around work, study, cost and time. This makes them central to modern participation.</p>
+        <p>The most accessible activities are easy to do alone, locally and outside a fixed club schedule. This makes them more compatible with work, study, cost and time pressure.</p>
       </div>
 
-      <div class="grid-two">
+      <div class="story-grid two-col">
         <article class="chart-card">
-          <div class="chart-meta"><span>Visualisation 4</span><strong>Flexible activities</strong></div>
-          <div id="chart4" class="chart"></div>
-          <p class="chart-caption">These activities usually do not require a fixed club season, team selection or match schedule.</p>
+          <div class="chart-header"><div><span>Visualisation 4</span><h3>Flexible activities</h3></div><p>Ranked bars · lifestyle activity</p></div>
+          <div id="chart4" class="chart chart-medium"></div>
+          <p class="chart-caption">Walking, fitness/gym, running and swimming dominate the flexible side of the participation story.</p>
         </article>
+
         <article class="chart-card">
-          <div class="chart-meta"><span>Visualisation 5</span><strong>Traditional sports</strong></div>
-          <div id="chart5" class="chart"></div>
-          <p class="chart-caption">Traditional sports remain meaningful, but their adult participation rates sit below the biggest fitness activities.</p>
+          <div class="chart-header"><div><span>Visualisation 5</span><h3>Traditional sports</h3></div><p>Ranked bars · organised sport</p></div>
+          <div id="chart5" class="chart chart-medium"></div>
+          <p class="chart-caption">Football/soccer is the highest traditional sport in this selection, but it remains far below walking and fitness/gym.</p>
         </article>
       </div>
 
-      <article class="chart-card hero-chart">
-        <div class="chart-meta"><span>Visualisation 6</span><strong>Age by activity heatmap</strong></div>
-        <div id="chart6" class="chart tall-chart"></div>
-        <p class="chart-caption">The heatmap makes the life-stage pattern visible: some activities peak among younger adults, while walking remains high later in life.</p>
+      <article class="chart-card feature-card">
+        <div class="chart-header"><div><span>Visualisation 6</span><h3>Activity heatmap by age</h3></div><p>Heatmap · life-stage pattern</p></div>
+        <div id="chart6" class="chart chart-xlarge"></div>
+        <div class="insight-row">
+          <p><strong>Key read:</strong> Fitness/gym is strongest among younger adults, while walking remains high across older groups.</p>
+          <p><strong>Design choice:</strong> Colour intensity is used for rate because the task is to identify high and low participation cells quickly.</p>
+        </div>
       </article>
     </section>
 
-    <section class="story-section" id="where">
-      <div class="section-intro">
+    <section class="chapter" id="where">
+      <div class="chapter-intro">
         <p class="section-kicker">03 / Where Australia moves</p>
         <h2>Participation is high everywhere, but geography still matters.</h2>
-        <p>The ACT records the highest adult participation rate in this comparison. Larger states contribute far more participants overall, but population size does not automatically mean a higher participation rate.</p>
+        <p>The ACT records the highest rate in this comparison. Larger states such as NSW and Victoria have far more participants overall, but population size does not automatically produce a higher rate.</p>
       </div>
 
-      <div class="grid-two map-grid">
+      <div class="story-grid map-layout">
         <article class="chart-card map-card">
-          <div class="chart-meta"><span>Visualisation 7</span><strong>Projected symbol map</strong></div>
-          <div id="chart7" class="chart map-chart"></div>
-          <p class="chart-caption">The map uses a simplified Australia outline for geographic context. Symbols represent state/territory participation values.</p>
+          <div class="chart-header"><div><span>Visualisation 7</span><h3>Projected participation map</h3></div><p>Geographic map · symbol size and colour</p></div>
+          <div id="chart7" class="chart chart-map"></div>
+          <p class="chart-caption">Symbols are positioned by approximate state or territory capital coordinates and projected onto a simplified Australian outline for geographic context.</p>
         </article>
-        <article class="chart-card">
-          <div class="chart-meta"><span>Visualisation 8</span><strong>State ranking</strong></div>
-          <div id="chart8" class="chart"></div>
-          <p class="chart-caption">The ranking view supports the map by making exact state and territory comparisons easier.</p>
+
+        <article class="chart-card compact-card">
+          <div class="chart-header"><div><span>Visualisation 8</span><h3>State and territory ranking</h3></div><p>Dot ranking · exact comparison</p></div>
+          <div id="chart8" class="chart chart-medium"></div>
+          <p class="chart-caption">The ranking view makes the geographic pattern easier to compare precisely than the map alone.</p>
         </article>
       </div>
 
-      <article class="chart-card hero-chart">
-        <div class="chart-meta"><span>Visualisation 9</span><strong>Population context</strong></div>
-        <div id="chart9" class="chart"></div>
-        <p class="chart-caption">This chart combines the two required data sources: AusPlay participation rates and ABS state/territory population data.</p>
+      <article class="chart-card feature-card">
+        <div class="chart-header"><div><span>Visualisation 9</span><h3>Population context</h3></div><p>Scatterplot · two-source comparison</p></div>
+        <div id="chart9" class="chart chart-large"></div>
+        <div class="insight-row">
+          <p><strong>Key read:</strong> NSW and Victoria contribute the largest participant counts because their populations are largest.</p>
+          <p><strong>Source link:</strong> This chart combines AusPlay participation estimates with ABS September 2025 state and territory population values.</p>
+        </div>
       </article>
     </section>
 
-    <section class="story-section" id="who">
-      <div class="section-intro">
+    <section class="chapter" id="who">
+      <div class="chapter-intro">
         <p class="section-kicker">04 / Who participates?</p>
         <h2>Participation patterns change by gender and life stage.</h2>
-        <p>The overall story becomes more interesting when split by activity. Some choices are relatively balanced, while others show clear gender or age patterns.</p>
+        <p>The national ranking hides meaningful differences between groups. Splitting by gender and age reveals where activities are balanced and where participation is concentrated.</p>
       </div>
 
-      <article class="chart-card hero-chart">
-        <div class="chart-meta"><span>Visualisation 10</span><strong>Gender diverging bars</strong></div>
-        <div id="chart10" class="chart tall-chart"></div>
-        <p class="chart-caption">Female participation is shown to the left and male participation to the right so the gap can be compared quickly.</p>
+      <article class="chart-card feature-card">
+        <div class="chart-header"><div><span>Visualisation 10</span><h3>Male and female participation</h3></div><p>Diverging bars · group comparison</p></div>
+        <div id="chart10" class="chart chart-xlarge"></div>
+        <div class="insight-row">
+          <p><strong>Key read:</strong> Walking is higher among females in this dataset, while running/jogging is higher among males.</p>
+          <p><strong>Design choice:</strong> A diverging layout makes the direction and size of the gender difference visible without extra calculation.</p>
+        </div>
       </article>
 
-      <article class="chart-card hero-chart">
-        <div class="chart-meta"><span>Visualisation 11</span><strong>Small multiples by age</strong></div>
-        <div id="chart11" class="chart small-multiples"></div>
-        <p class="chart-caption">Small multiples avoid forcing every activity into one crowded line chart.</p>
+      <article class="chart-card feature-card">
+        <div class="chart-header"><div><span>Visualisation 11</span><h3>Age profiles for selected activities</h3></div><p>Small multiples · trend shapes</p></div>
+        <div id="chart11" class="chart chart-small-multiples"></div>
+        <p class="chart-caption">Small multiples keep each activity readable while still letting the viewer compare overall life-stage shapes.</p>
       </article>
     </section>
 
-    <section class="story-section final-section" id="takeaway">
-      <div class="section-intro">
+    <section class="chapter final-section" id="takeaway">
+      <div class="chapter-intro">
         <p class="section-kicker">05 / Final takeaway</p>
         <h2>Australia is sporty, but it is also increasingly flexible.</h2>
-        <p>The strongest participation story is not only about organised teams and competition. It is also about activities people can do alone, casually, locally and on their own schedule.</p>
+        <p>The strongest adult participation story is not only about organised teams and competition. It is also about activities people can do alone, casually, locally and on their own schedule.</p>
       </div>
 
-      <article class="chart-card hero-chart spectrum-card">
-        <div class="chart-meta"><span>Visualisation 12</span><strong>Custom sport-to-fitness spectrum</strong></div>
-        <div id="chart12" class="chart spectrum-chart"></div>
-        <p class="chart-caption">The horizontal position is a derived storytelling classification. Circle size uses the real AusPlay adult participation rate.</p>
+      <article class="chart-card feature-card spectrum-card">
+        <div class="chart-header"><div><span>Visualisation 12</span><h3>Sport-to-fitness spectrum</h3></div><p>Custom idiom · derived placement</p></div>
+        <div id="chart12" class="chart chart-spectrum"></div>
+        <div class="insight-row">
+          <p><strong>Key read:</strong> The largest circles are on the flexible fitness side, especially walking and fitness/gym.</p>
+          <p><strong>Design choice:</strong> Position is a derived storytelling classification, while circle size uses the real AusPlay adult participation rate.</p>
+        </div>
       </article>
+
+      <section class="closing-panel">
+        <p class="section-kicker">Final message</p>
+        <h2>The modern Australian participation story is not sport versus fitness. It is sport plus fitness.</h2>
+        <p>Traditional sports still matter culturally and socially, but the participation data shows that everyday, flexible and individual activities are now central to how Australian adults stay active.</p>
+      </section>
+    </section>
+
+    <section class="requirements-panel" aria-label="Visualisation idiom summary">
+      <div>
+        <p class="section-kicker">Design checklist</p>
+        <h2>Visual idioms used</h2>
+        <p>The page deliberately uses varied Vega-Lite idioms rather than repeating one chart type.</p>
+      </div>
+      <div class="idiom-grid">
+        <span>Bar ranking</span><span>Stacked bar</span><span>Heatmap</span><span>Projected map</span><span>Dot ranking</span><span>Scatterplot</span><span>Diverging bar</span><span>Small multiples</span><span>Custom spectrum</span>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" id="sources">
     <div class="footer-inner">
       <h2>Sources and authorship</h2>
-      <div class="footer-grid">
-        <p><strong>Author:</strong> Yash Sibal<br><strong>Date:</strong> 3 June 2026</p>
-        <p><strong>Data sources:</strong> Australian Sports Commission AusPlay Data Tables, January–December 2025; Australian Bureau of Statistics National, state and territory population, September 2025.</p>
-        <p><strong>Map note:</strong> The projected symbol map uses a simplified Australia outline for context and approximate state/territory capital coordinates for symbol placement.</p>
-        <p><strong>AI acknowledgement:</strong> Generative AI tools were used to assist with project planning, code structure, Vega-Lite specifications and drafting explanatory text. Data values were extracted from the cited public data sources.</p>
+      <div class="source-table" role="table" aria-label="Data sources">
+        <div role="row"><strong>Author</strong><span>Yash Sibal</span></div>
+        <div role="row"><strong>Date</strong><span>3 June 2026</span></div>
+        <div role="row"><strong>Primary data</strong><span>Australian Sports Commission, AusPlay Data Tables, January–December 2025.</span></div>
+        <div role="row"><strong>Population data</strong><span>Australian Bureau of Statistics, National, state and territory population, September 2025.</span></div>
+        <div role="row"><strong>Map note</strong><span>Projected symbol map uses a simplified Australia outline and approximate capital/territory coordinates for symbol placement.</span></div>
+        <div role="row"><strong>AI acknowledgement</strong><span>Generative AI tools assisted with planning, code structure, Vega-Lite specifications and drafting explanatory text. Data values were extracted from the cited public sources.</span></div>
       </div>
       <p class="interpretation-note"><strong>Interpretation note:</strong> AusPlay participation rates are estimates. People can participate in multiple activities, so activity-level rates should not be added together as unique people.</p>
     </div>

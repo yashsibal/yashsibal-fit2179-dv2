@@ -53,8 +53,8 @@
     }
   },
   "title": {
-    "text": "A projected map of adult participation",
-    "subtitle": "State and territory values shown as symbols over a simplified Australia outline"
+    "text": "Participation rates placed on an Australian geographic frame",
+    "subtitle": "Projected symbol map using approximate capital/territory coordinates"
   },
   "width": 620,
   "height": 430,
@@ -77,14 +77,14 @@
           {
             "shape": "Mainland",
             "order": 0,
-            "longitude": 113.0,
+            "longitude": 113,
             "latitude": -35.1
           },
           {
             "shape": "Mainland",
             "order": 1,
             "longitude": 114.3,
-            "latitude": -32.0
+            "latitude": -32
           },
           {
             "shape": "Mainland",
@@ -101,38 +101,38 @@
           {
             "shape": "Mainland",
             "order": 4,
-            "longitude": 116.0,
+            "longitude": 116,
             "latitude": -20.5
           },
           {
             "shape": "Mainland",
             "order": 5,
-            "longitude": 119.0,
+            "longitude": 119,
             "latitude": -18.2
           },
           {
             "shape": "Mainland",
             "order": 6,
             "longitude": 122.5,
-            "latitude": -17.0
+            "latitude": -17
           },
           {
             "shape": "Mainland",
             "order": 7,
-            "longitude": 124.0,
+            "longitude": 124,
             "latitude": -14.2
           },
           {
             "shape": "Mainland",
             "order": 8,
-            "longitude": 127.0,
+            "longitude": 127,
             "latitude": -13.6
           },
           {
             "shape": "Mainland",
             "order": 9,
-            "longitude": 129.0,
-            "latitude": -14.0
+            "longitude": 129,
+            "latitude": -14
           },
           {
             "shape": "Mainland",
@@ -144,7 +144,7 @@
             "shape": "Mainland",
             "order": 11,
             "longitude": 133.7,
-            "latitude": -11.0
+            "latitude": -11
           },
           {
             "shape": "Mainland",
@@ -162,13 +162,13 @@
             "shape": "Mainland",
             "order": 14,
             "longitude": 141.2,
-            "latitude": -16.0
+            "latitude": -16
           },
           {
             "shape": "Mainland",
             "order": 15,
             "longitude": 142.9,
-            "latitude": -11.0
+            "latitude": -11
           },
           {
             "shape": "Mainland",
@@ -185,8 +185,8 @@
           {
             "shape": "Mainland",
             "order": 18,
-            "longitude": 147.0,
-            "latitude": -19.0
+            "longitude": 147,
+            "latitude": -19
           },
           {
             "shape": "Mainland",
@@ -210,7 +210,7 @@
             "shape": "Mainland",
             "order": 22,
             "longitude": 152.4,
-            "latitude": -31.0
+            "latitude": -31
           },
           {
             "shape": "Mainland",
@@ -275,7 +275,7 @@
           {
             "shape": "Mainland",
             "order": 33,
-            "longitude": 113.0,
+            "longitude": 113,
             "latitude": -35.1
           },
           {
@@ -294,7 +294,7 @@
             "shape": "Tasmania",
             "order": 2,
             "longitude": 148.4,
-            "latitude": -42.0
+            "latitude": -42
           },
           {
             "shape": "Tasmania",
@@ -311,7 +311,7 @@
           {
             "shape": "Tasmania",
             "order": 5,
-            "longitude": 144.0,
+            "longitude": 144,
             "latitude": -42.2
           },
           {
