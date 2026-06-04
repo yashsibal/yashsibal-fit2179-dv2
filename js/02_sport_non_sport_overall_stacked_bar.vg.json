@@ -53,83 +53,77 @@
     }
   },
   "title": {
-    "text": "Flexible activities sit at the centre",
-    "subtitle": "Selected lifestyle and fitness activities, adults, AusPlay Jan-Dec 2025"
+    "text": "Most active adults include non-sport activity",
+    "subtitle": "Sport/non-sport relationship among adults, AusPlay Jan-Dec 2025"
   },
   "data": {
     "values": [
       {
-        "activity": "Walking",
-        "participation_rate_pct": 50.2,
-        "estimated_participants": 11363621
+        "category": "Sport-related only",
+        "story_group": "Sport-linked",
+        "participation_rate_pct": 12.93,
+        "category_order": 1
       },
       {
-        "activity": "Fitness/Gym",
-        "participation_rate_pct": 34.1,
-        "estimated_participants": 7719043
+        "category": "Non-sport only",
+        "story_group": "Lifestyle / fitness-linked",
+        "participation_rate_pct": 34.98,
+        "category_order": 2
       },
       {
-        "activity": "Running/jogging",
-        "participation_rate_pct": 16.53,
-        "estimated_participants": 3740484
-      },
-      {
-        "activity": "Swimming",
-        "participation_rate_pct": 15.39,
-        "estimated_participants": 3483472
-      },
-      {
-        "activity": "Cycling",
-        "participation_rate_pct": 8.29,
-        "estimated_participants": 1877339
-      },
-      {
-        "activity": "Pilates",
-        "participation_rate_pct": 7.18,
-        "estimated_participants": 1625325
-      },
-      {
-        "activity": "Yoga",
-        "participation_rate_pct": 5.07,
-        "estimated_participants": 1148005
+        "category": "Both sport and non-sport",
+        "story_group": "Mixed",
+        "participation_rate_pct": 37.99,
+        "category_order": 3
       }
     ]
   },
   "width": "container",
-  "height": {
-    "step": 32
-  },
+  "height": 110,
   "mark": {
     "type": "bar",
-    "tooltip": true,
-    "color": "#10b981"
+    "tooltip": true
   },
   "encoding": {
     "y": {
-      "field": "activity",
-      "type": "nominal",
-      "sort": "-x",
-      "title": null
+      "value": 45
     },
     "x": {
       "field": "participation_rate_pct",
       "type": "quantitative",
-      "title": "Adult participation rate (%)"
+      "stack": "zero",
+      "title": "Share of adult population (%)"
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "title": null,
+      "scale": {
+        "domain": [
+          "Sport-related only",
+          "Non-sport only",
+          "Both sport and non-sport"
+        ],
+        "range": [
+          "#2563eb",
+          "#10b981",
+          "#8b5cf6"
+        ]
+      }
+    },
+    "order": {
+      "field": "category_order",
+      "type": "quantitative"
     },
     "tooltip": [
       {
-        "field": "activity",
-        "title": "Activity"
+        "field": "category",
+        "title": "Category"
       },
       {
         "field": "participation_rate_pct",
         "title": "Participation rate (%)",
         "format": ".1f"
-      },
-      {
-        "field": "estimated_participants",
-        "title": "Estimated adult participants",
-        "format": ","
       }
     ]
   }

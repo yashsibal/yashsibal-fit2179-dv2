@@ -8,106 +8,77 @@
     "axis": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
-      "labelColor": "#1F2937",
-      "titleColor": "#111827",
-      "gridColor": "#E5E7EB",
-      "domainColor": "#CBD5E1",
-      "tickColor": "#CBD5E1",
+      "labelColor": "#334155",
+      "titleColor": "#0f172a",
+      "gridColor": "#e8edf4",
+      "domainColor": "#cbd5e1",
+      "tickColor": "#cbd5e1",
       "labelFontSize": 11,
-      "titleFontSize": 11
+      "titleFontSize": 11,
+      "titlePadding": 10
     },
     "legend": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
       "orient": "bottom",
-      "labelLimit": 160,
+      "labelLimit": 180,
       "labelFontSize": 10,
-      "titleFontSize": 10
+      "titleFontSize": 10,
+      "symbolType": "circle"
     },
     "title": {
       "font": "Inter, Arial, sans-serif",
-      "fontSize": 15,
+      "fontSize": 16,
+      "fontWeight": 800,
       "subtitleFont": "Inter, Arial, sans-serif",
       "subtitleFontSize": 11,
       "anchor": "start",
-      "color": "#111827",
-      "subtitleColor": "#4B5563"
+      "color": "#0f172a",
+      "subtitleColor": "#64748b",
+      "offset": 14
     },
     "bar": {
-      "cornerRadiusEnd": 4
+      "cornerRadiusEnd": 5
+    },
+    "range": {
+      "category": [
+        "#0f766e",
+        "#2563eb",
+        "#f59e0b",
+        "#db2777",
+        "#8b5cf6",
+        "#14b8a6",
+        "#64748b"
+      ]
     }
   },
   "title": {
-    "text": "The final picture: sport and fitness sit on a participation spectrum",
-    "subtitle": "Circle size shows adult participation rate; position is a derived storytelling classification."
+    "text": "The final picture: sport and fitness sit on a spectrum",
+    "subtitle": "Circle size shows adult participation rate; position is a derived storytelling classification"
   },
   "width": "container",
-  "height": 260,
+  "height": 310,
   "layer": [
     {
       "data": {
         "values": [
           {
-            "x1": 1,
-            "x2": 10,
-            "y": 100
+            "x": 0.8,
+            "y": 1.0,
+            "order": 1
+          },
+          {
+            "x": 10.0,
+            "y": 1.0,
+            "order": 2
           }
         ]
       },
       "mark": {
-        "type": "rule",
-        "stroke": "#CBD5E1",
-        "strokeWidth": 6
-      },
-      "encoding": {
-        "x": {
-          "field": "x1",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0.5,
-              10.5
-            ]
-          },
-          "axis": null
-        },
-        "x2": {
-          "field": "x2"
-        },
-        "y": {
-          "field": "y",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              70,
-              130
-            ]
-          },
-          "axis": null
-        }
-      }
-    },
-    {
-      "data": {
-        "values": [
-          {
-            "x": 1.25,
-            "y": 119,
-            "label": "Traditional organised sport",
-            "colour": "#2563EB"
-          },
-          {
-            "x": 8.75,
-            "y": 119,
-            "label": "Flexible lifestyle fitness",
-            "colour": "#0f766e"
-          }
-        ]
-      },
-      "mark": {
-        "type": "text",
-        "fontSize": 12,
-        "fontWeight": "bold"
+        "type": "line",
+        "stroke": "#cbd5e1",
+        "strokeWidth": 7,
+        "strokeCap": "round"
       },
       "encoding": {
         "x": {
@@ -116,7 +87,7 @@
           "scale": {
             "domain": [
               0.5,
-              10.5
+              10.3
             ]
           },
           "axis": null
@@ -126,32 +97,185 @@
           "type": "quantitative",
           "scale": {
             "domain": [
-              70,
-              130
+              0.55,
+              1.45
+            ]
+          },
+          "axis": null
+        },
+        "order": {
+          "field": "order",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 1.0,
+            "y": 1.36,
+            "label": "Traditional organised sport"
+          },
+          {
+            "x": 8.6,
+            "y": 1.36,
+            "label": "Flexible lifestyle fitness"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontWeight": 900,
+        "color": "#0f172a"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0.5,
+              10.3
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0.55,
+              1.45
             ]
           },
           "axis": null
         },
         "text": {
           "field": "label"
-        },
-        "color": {
-          "field": "colour",
-          "type": "nominal",
-          "scale": null,
-          "legend": null
         }
       }
     },
     {
       "data": {
-        "url": "data/sport_fitness_spectrum.csv"
+        "values": [
+          {
+            "activity": "Australian football",
+            "spectrum_score": 1.0,
+            "participation_rate_pct": 2.42,
+            "estimated_participants": 547129,
+            "side": "Traditional sport",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Cricket",
+            "spectrum_score": 1.4,
+            "participation_rate_pct": 2.49,
+            "estimated_participants": 563967,
+            "side": "Traditional sport",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          },
+          {
+            "activity": "Football/soccer",
+            "spectrum_score": 1.8,
+            "participation_rate_pct": 5.62,
+            "estimated_participants": 1273027,
+            "side": "Traditional sport",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Basketball",
+            "spectrum_score": 2.2,
+            "participation_rate_pct": 4.53,
+            "estimated_participants": 1024360,
+            "side": "Traditional sport",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          },
+          {
+            "activity": "Netball",
+            "spectrum_score": 2.6,
+            "participation_rate_pct": 2.11,
+            "estimated_participants": 476973,
+            "side": "Traditional sport",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Tennis",
+            "spectrum_score": 3.4,
+            "participation_rate_pct": 4.94,
+            "estimated_participants": 1118407,
+            "side": "Traditional sport",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          },
+          {
+            "activity": "Cycling",
+            "spectrum_score": 5.9,
+            "participation_rate_pct": 8.29,
+            "estimated_participants": 1877339,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Swimming",
+            "spectrum_score": 6.5,
+            "participation_rate_pct": 15.39,
+            "estimated_participants": 3483472,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          },
+          {
+            "activity": "Running/jogging",
+            "spectrum_score": 7.3,
+            "participation_rate_pct": 16.53,
+            "estimated_participants": 3740484,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Yoga",
+            "spectrum_score": 8.1,
+            "participation_rate_pct": 5.07,
+            "estimated_participants": 1148005,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          },
+          {
+            "activity": "Fitness/Gym",
+            "spectrum_score": 8.8,
+            "participation_rate_pct": 34.1,
+            "estimated_participants": 7719043,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Walking",
+            "spectrum_score": 9.6,
+            "participation_rate_pct": 50.2,
+            "estimated_participants": 11363621,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          }
+        ]
       },
       "mark": {
         "type": "circle",
-        "opacity": 0.86,
-        "stroke": "#FFFFFF",
-        "strokeWidth": 1.2,
+        "opacity": 0.9,
+        "stroke": "#fff",
+        "strokeWidth": 1.5,
         "tooltip": true
       },
       "encoding": {
@@ -161,18 +285,18 @@
           "scale": {
             "domain": [
               0.5,
-              10.5
+              10.3
             ]
           },
           "axis": null
         },
         "y": {
-          "datum": 100,
+          "field": "spectrum_y",
           "type": "quantitative",
           "scale": {
             "domain": [
-              70,
-              130
+              0.55,
+              1.45
             ]
           },
           "axis": null
@@ -183,8 +307,8 @@
           "title": "Participation rate (%)",
           "scale": {
             "range": [
-              100,
-              4000
+              150,
+              5200
             ]
           }
         },
@@ -198,8 +322,8 @@
               "Flexible lifestyle fitness"
             ],
             "range": [
-              "#2563EB",
-              "#10B981"
+              "#2563eb",
+              "#10b981"
             ]
           }
         },
@@ -227,14 +351,122 @@
     },
     {
       "data": {
-        "url": "data/sport_fitness_spectrum.csv"
+        "values": [
+          {
+            "activity": "Australian football",
+            "spectrum_score": 1.0,
+            "participation_rate_pct": 2.42,
+            "estimated_participants": 547129,
+            "side": "Traditional sport",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Cricket",
+            "spectrum_score": 1.4,
+            "participation_rate_pct": 2.49,
+            "estimated_participants": 563967,
+            "side": "Traditional sport",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          },
+          {
+            "activity": "Football/soccer",
+            "spectrum_score": 1.8,
+            "participation_rate_pct": 5.62,
+            "estimated_participants": 1273027,
+            "side": "Traditional sport",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Basketball",
+            "spectrum_score": 2.2,
+            "participation_rate_pct": 4.53,
+            "estimated_participants": 1024360,
+            "side": "Traditional sport",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          },
+          {
+            "activity": "Netball",
+            "spectrum_score": 2.6,
+            "participation_rate_pct": 2.11,
+            "estimated_participants": 476973,
+            "side": "Traditional sport",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Tennis",
+            "spectrum_score": 3.4,
+            "participation_rate_pct": 4.94,
+            "estimated_participants": 1118407,
+            "side": "Traditional sport",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          },
+          {
+            "activity": "Cycling",
+            "spectrum_score": 5.9,
+            "participation_rate_pct": 8.29,
+            "estimated_participants": 1877339,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Swimming",
+            "spectrum_score": 6.5,
+            "participation_rate_pct": 15.39,
+            "estimated_participants": 3483472,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          },
+          {
+            "activity": "Running/jogging",
+            "spectrum_score": 7.3,
+            "participation_rate_pct": 16.53,
+            "estimated_participants": 3740484,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Yoga",
+            "spectrum_score": 8.1,
+            "participation_rate_pct": 5.07,
+            "estimated_participants": 1148005,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          },
+          {
+            "activity": "Fitness/Gym",
+            "spectrum_score": 8.8,
+            "participation_rate_pct": 34.1,
+            "estimated_participants": 7719043,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 1.08,
+            "label_y": 1.28
+          },
+          {
+            "activity": "Walking",
+            "spectrum_score": 9.6,
+            "participation_rate_pct": 50.2,
+            "estimated_participants": 11363621,
+            "side": "Flexible lifestyle fitness",
+            "spectrum_y": 0.92,
+            "label_y": 0.73
+          }
+        ]
       },
       "mark": {
         "type": "text",
-        "dy": 58,
         "fontSize": 10,
-        "baseline": "top",
-        "color": "#111827"
+        "fontWeight": 700,
+        "color": "#0f172a"
       },
       "encoding": {
         "x": {
@@ -243,18 +475,18 @@
           "scale": {
             "domain": [
               0.5,
-              10.5
+              10.3
             ]
           },
           "axis": null
         },
         "y": {
-          "datum": 100,
+          "field": "label_y",
           "type": "quantitative",
           "scale": {
             "domain": [
-              70,
-              130
+              0.55,
+              1.45
             ]
           },
           "axis": null

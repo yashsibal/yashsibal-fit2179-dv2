@@ -1,10 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
   "config": {
     "view": {
       "stroke": null
@@ -12,49 +8,129 @@
     "axis": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
-      "labelColor": "#1F2937",
-      "titleColor": "#111827",
-      "gridColor": "#E5E7EB",
-      "domainColor": "#CBD5E1",
-      "tickColor": "#CBD5E1",
+      "labelColor": "#334155",
+      "titleColor": "#0f172a",
+      "gridColor": "#e8edf4",
+      "domainColor": "#cbd5e1",
+      "tickColor": "#cbd5e1",
       "labelFontSize": 11,
-      "titleFontSize": 11
+      "titleFontSize": 11,
+      "titlePadding": 10
     },
     "legend": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
       "orient": "bottom",
-      "labelLimit": 160,
+      "labelLimit": 180,
       "labelFontSize": 10,
-      "titleFontSize": 10
+      "titleFontSize": 10,
+      "symbolType": "circle"
     },
     "title": {
       "font": "Inter, Arial, sans-serif",
-      "fontSize": 15,
+      "fontSize": 16,
+      "fontWeight": 800,
       "subtitleFont": "Inter, Arial, sans-serif",
       "subtitleFontSize": 11,
       "anchor": "start",
-      "color": "#111827",
-      "subtitleColor": "#4B5563"
+      "color": "#0f172a",
+      "subtitleColor": "#64748b",
+      "offset": 14
     },
     "bar": {
-      "cornerRadiusEnd": 4
+      "cornerRadiusEnd": 5
+    },
+    "range": {
+      "category": [
+        "#0f766e",
+        "#2563eb",
+        "#f59e0b",
+        "#db2777",
+        "#8b5cf6",
+        "#14b8a6",
+        "#64748b"
+      ]
     }
   },
   "title": {
-    "text": "Large states have more participants, but not always higher participation rates",
+    "text": "Large states have more participants, but not always higher rates",
     "subtitle": "ABS total population combined with AusPlay adult participation rate"
   },
   "data": {
-    "url": "data/state_population_participation.csv"
+    "values": [
+      {
+        "state_abbr": "ACT",
+        "state_name": "Australian Capital Territory",
+        "population_2025": 486231,
+        "population_share_pct": 1.75,
+        "participation_rate_pct": 92.24,
+        "estimated_adult_participants": 367094
+      },
+      {
+        "state_abbr": "NSW",
+        "state_name": "New South Wales",
+        "population_2025": 8624534,
+        "population_share_pct": 31.11,
+        "participation_rate_pct": 85.41,
+        "estimated_adult_participants": 6028038
+      },
+      {
+        "state_abbr": "NT",
+        "state_name": "Northern Territory",
+        "population_2025": 265457,
+        "population_share_pct": 0.96,
+        "participation_rate_pct": 89.34,
+        "estimated_adult_participants": 186157
+      },
+      {
+        "state_abbr": "QLD",
+        "state_name": "Queensland",
+        "population_2025": 5692642,
+        "population_share_pct": 20.53,
+        "participation_rate_pct": 83.92,
+        "estimated_adult_participants": 3882805
+      },
+      {
+        "state_abbr": "SA",
+        "state_name": "South Australia",
+        "population_2025": 1908182,
+        "population_share_pct": 6.88,
+        "participation_rate_pct": 84.3,
+        "estimated_adult_participants": 1332909
+      },
+      {
+        "state_abbr": "TAS",
+        "state_name": "Tasmania",
+        "population_2025": 576659,
+        "population_share_pct": 2.08,
+        "participation_rate_pct": 86.96,
+        "estimated_adult_participants": 420327
+      },
+      {
+        "state_abbr": "VIC",
+        "state_name": "Victoria",
+        "population_2025": 7104349,
+        "population_share_pct": 25.62,
+        "participation_rate_pct": 87.46,
+        "estimated_adult_participants": 5082762
+      },
+      {
+        "state_abbr": "WA",
+        "state_name": "Western Australia",
+        "population_2025": 3061672,
+        "population_share_pct": 11.04,
+        "participation_rate_pct": 86.81,
+        "estimated_adult_participants": 2143227
+      }
+    ]
   },
   "width": "container",
-  "height": 330,
+  "height": 340,
   "mark": {
     "type": "circle",
-    "opacity": 0.82,
-    "stroke": "#FFFFFF",
-    "strokeWidth": 1.2,
+    "opacity": 0.84,
+    "stroke": "#fff",
+    "strokeWidth": 1.4,
     "tooltip": true
   },
   "encoding": {
@@ -83,8 +159,8 @@
       "title": "Estimated adult participants",
       "scale": {
         "range": [
-          120,
-          1800
+          160,
+          2000
         ]
       }
     },

@@ -1,0 +1,599 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "labelColor": "#334155",
+      "titleColor": "#0f172a",
+      "gridColor": "#e8edf4",
+      "domainColor": "#cbd5e1",
+      "tickColor": "#cbd5e1",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "orient": "bottom",
+      "labelLimit": 180,
+      "labelFontSize": 10,
+      "titleFontSize": 10,
+      "symbolType": "circle"
+    },
+    "title": {
+      "font": "Inter, Arial, sans-serif",
+      "fontSize": 16,
+      "fontWeight": 800,
+      "subtitleFont": "Inter, Arial, sans-serif",
+      "subtitleFontSize": 11,
+      "anchor": "start",
+      "color": "#0f172a",
+      "subtitleColor": "#64748b",
+      "offset": 14
+    },
+    "bar": {
+      "cornerRadiusEnd": 5
+    },
+    "range": {
+      "category": [
+        "#0f766e",
+        "#2563eb",
+        "#f59e0b",
+        "#db2777",
+        "#8b5cf6",
+        "#14b8a6",
+        "#64748b"
+      ]
+    }
+  },
+  "title": {
+    "text": "A projected map of adult participation",
+    "subtitle": "State and territory values shown as symbols over a simplified Australia outline"
+  },
+  "width": 620,
+  "height": 430,
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -27
+    ],
+    "scale": 650,
+    "translate": [
+      310,
+      215
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "shape": "Mainland",
+            "order": 0,
+            "longitude": 113.0,
+            "latitude": -35.1
+          },
+          {
+            "shape": "Mainland",
+            "order": 1,
+            "longitude": 114.3,
+            "latitude": -32.0
+          },
+          {
+            "shape": "Mainland",
+            "order": 2,
+            "longitude": 113.5,
+            "latitude": -28.5
+          },
+          {
+            "shape": "Mainland",
+            "order": 3,
+            "longitude": 114.4,
+            "latitude": -24.5
+          },
+          {
+            "shape": "Mainland",
+            "order": 4,
+            "longitude": 116.0,
+            "latitude": -20.5
+          },
+          {
+            "shape": "Mainland",
+            "order": 5,
+            "longitude": 119.0,
+            "latitude": -18.2
+          },
+          {
+            "shape": "Mainland",
+            "order": 6,
+            "longitude": 122.5,
+            "latitude": -17.0
+          },
+          {
+            "shape": "Mainland",
+            "order": 7,
+            "longitude": 124.0,
+            "latitude": -14.2
+          },
+          {
+            "shape": "Mainland",
+            "order": 8,
+            "longitude": 127.0,
+            "latitude": -13.6
+          },
+          {
+            "shape": "Mainland",
+            "order": 9,
+            "longitude": 129.0,
+            "latitude": -14.0
+          },
+          {
+            "shape": "Mainland",
+            "order": 10,
+            "longitude": 130.7,
+            "latitude": -11.2
+          },
+          {
+            "shape": "Mainland",
+            "order": 11,
+            "longitude": 133.7,
+            "latitude": -11.0
+          },
+          {
+            "shape": "Mainland",
+            "order": 12,
+            "longitude": 136.8,
+            "latitude": -12.8
+          },
+          {
+            "shape": "Mainland",
+            "order": 13,
+            "longitude": 138.8,
+            "latitude": -16.2
+          },
+          {
+            "shape": "Mainland",
+            "order": 14,
+            "longitude": 141.2,
+            "latitude": -16.0
+          },
+          {
+            "shape": "Mainland",
+            "order": 15,
+            "longitude": 142.9,
+            "latitude": -11.0
+          },
+          {
+            "shape": "Mainland",
+            "order": 16,
+            "longitude": 144.5,
+            "latitude": -14.5
+          },
+          {
+            "shape": "Mainland",
+            "order": 17,
+            "longitude": 145.5,
+            "latitude": -17.2
+          },
+          {
+            "shape": "Mainland",
+            "order": 18,
+            "longitude": 147.0,
+            "latitude": -19.0
+          },
+          {
+            "shape": "Mainland",
+            "order": 19,
+            "longitude": 149.5,
+            "latitude": -22.5
+          },
+          {
+            "shape": "Mainland",
+            "order": 20,
+            "longitude": 152.5,
+            "latitude": -25.6
+          },
+          {
+            "shape": "Mainland",
+            "order": 21,
+            "longitude": 153.6,
+            "latitude": -28.1
+          },
+          {
+            "shape": "Mainland",
+            "order": 22,
+            "longitude": 152.4,
+            "latitude": -31.0
+          },
+          {
+            "shape": "Mainland",
+            "order": 23,
+            "longitude": 150.6,
+            "latitude": -34.2
+          },
+          {
+            "shape": "Mainland",
+            "order": 24,
+            "longitude": 147.2,
+            "latitude": -37.6
+          },
+          {
+            "shape": "Mainland",
+            "order": 25,
+            "longitude": 144.2,
+            "latitude": -38.7
+          },
+          {
+            "shape": "Mainland",
+            "order": 26,
+            "longitude": 141.2,
+            "latitude": -38.1
+          },
+          {
+            "shape": "Mainland",
+            "order": 27,
+            "longitude": 138.5,
+            "latitude": -35.8
+          },
+          {
+            "shape": "Mainland",
+            "order": 28,
+            "longitude": 135.3,
+            "latitude": -34.2
+          },
+          {
+            "shape": "Mainland",
+            "order": 29,
+            "longitude": 131.5,
+            "latitude": -31.8
+          },
+          {
+            "shape": "Mainland",
+            "order": 30,
+            "longitude": 127.5,
+            "latitude": -31.4
+          },
+          {
+            "shape": "Mainland",
+            "order": 31,
+            "longitude": 123.2,
+            "latitude": -33.9
+          },
+          {
+            "shape": "Mainland",
+            "order": 32,
+            "longitude": 118.5,
+            "latitude": -34.8
+          },
+          {
+            "shape": "Mainland",
+            "order": 33,
+            "longitude": 113.0,
+            "latitude": -35.1
+          },
+          {
+            "shape": "Tasmania",
+            "order": 0,
+            "longitude": 144.4,
+            "latitude": -40.6
+          },
+          {
+            "shape": "Tasmania",
+            "order": 1,
+            "longitude": 147.4,
+            "latitude": -40.8
+          },
+          {
+            "shape": "Tasmania",
+            "order": 2,
+            "longitude": 148.4,
+            "latitude": -42.0
+          },
+          {
+            "shape": "Tasmania",
+            "order": 3,
+            "longitude": 147.8,
+            "latitude": -43.3
+          },
+          {
+            "shape": "Tasmania",
+            "order": 4,
+            "longitude": 145.5,
+            "latitude": -43.5
+          },
+          {
+            "shape": "Tasmania",
+            "order": 5,
+            "longitude": 144.0,
+            "latitude": -42.2
+          },
+          {
+            "shape": "Tasmania",
+            "order": 6,
+            "longitude": 144.4,
+            "latitude": -40.6
+          }
+        ]
+      },
+      "mark": {
+        "type": "line",
+        "stroke": "#94a3b8",
+        "strokeWidth": 2.2,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "detail": {
+          "field": "shape",
+          "type": "nominal"
+        },
+        "order": {
+          "field": "order",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "state_abbr": "ACT",
+            "state_name": "Australian Capital Territory",
+            "participation_rate_pct": 92.24,
+            "estimated_adult_participants": 367094,
+            "longitude": 149.13,
+            "latitude": -35.28,
+            "label_dx": 0,
+            "label_dy": -20
+          },
+          {
+            "state_abbr": "NSW",
+            "state_name": "New South Wales",
+            "participation_rate_pct": 85.41,
+            "estimated_adult_participants": 6028038,
+            "longitude": 151.21,
+            "latitude": -33.87,
+            "label_dx": 0,
+            "label_dy": 18
+          },
+          {
+            "state_abbr": "NT",
+            "state_name": "Northern Territory",
+            "participation_rate_pct": 89.34,
+            "estimated_adult_participants": 186157,
+            "longitude": 130.84,
+            "latitude": -12.46,
+            "label_dx": 0,
+            "label_dy": -18
+          },
+          {
+            "state_abbr": "QLD",
+            "state_name": "Queensland",
+            "participation_rate_pct": 83.92,
+            "estimated_adult_participants": 3882805,
+            "longitude": 153.03,
+            "latitude": -27.47,
+            "label_dx": 0,
+            "label_dy": -18
+          },
+          {
+            "state_abbr": "SA",
+            "state_name": "South Australia",
+            "participation_rate_pct": 84.3,
+            "estimated_adult_participants": 1332909,
+            "longitude": 138.6,
+            "latitude": -34.93,
+            "label_dx": 0,
+            "label_dy": 18
+          },
+          {
+            "state_abbr": "TAS",
+            "state_name": "Tasmania",
+            "participation_rate_pct": 86.96,
+            "estimated_adult_participants": 420327,
+            "longitude": 147.33,
+            "latitude": -42.88,
+            "label_dx": 0,
+            "label_dy": 18
+          },
+          {
+            "state_abbr": "VIC",
+            "state_name": "Victoria",
+            "participation_rate_pct": 87.46,
+            "estimated_adult_participants": 5082762,
+            "longitude": 144.96,
+            "latitude": -37.81,
+            "label_dx": 0,
+            "label_dy": 18
+          },
+          {
+            "state_abbr": "WA",
+            "state_name": "Western Australia",
+            "participation_rate_pct": 86.81,
+            "estimated_adult_participants": 2143227,
+            "longitude": 115.86,
+            "latitude": -31.95,
+            "label_dx": 0,
+            "label_dy": -18
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.92,
+        "stroke": "#fff",
+        "strokeWidth": 1.7,
+        "tooltip": true
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "estimated_adult_participants",
+          "type": "quantitative",
+          "title": "Estimated adult participants",
+          "scale": {
+            "range": [
+              180,
+              3300
+            ]
+          }
+        },
+        "color": {
+          "field": "participation_rate_pct",
+          "type": "quantitative",
+          "title": "Participation rate (%)",
+          "scale": {
+            "domain": [
+              83,
+              93
+            ],
+            "scheme": "tealblues"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "title": "State/Territory"
+          },
+          {
+            "field": "participation_rate_pct",
+            "title": "Participation rate (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "estimated_adult_participants",
+            "title": "Estimated adult participants",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "state_abbr": "ACT",
+            "state_name": "Australian Capital Territory",
+            "participation_rate_pct": 92.24,
+            "estimated_adult_participants": 367094,
+            "longitude": 149.13,
+            "latitude": -35.28,
+            "label_dx": 0,
+            "label_dy": -20
+          },
+          {
+            "state_abbr": "NSW",
+            "state_name": "New South Wales",
+            "participation_rate_pct": 85.41,
+            "estimated_adult_participants": 6028038,
+            "longitude": 151.21,
+            "latitude": -33.87,
+            "label_dx": 0,
+            "label_dy": 18
+          },
+          {
+            "state_abbr": "NT",
+            "state_name": "Northern Territory",
+            "participation_rate_pct": 89.34,
+            "estimated_adult_participants": 186157,
+            "longitude": 130.84,
+            "latitude": -12.46,
+            "label_dx": 0,
+            "label_dy": -18
+          },
+          {
+            "state_abbr": "QLD",
+            "state_name": "Queensland",
+            "participation_rate_pct": 83.92,
+            "estimated_adult_participants": 3882805,
+            "longitude": 153.03,
+            "latitude": -27.47,
+            "label_dx": 0,
+            "label_dy": -18
+          },
+          {
+            "state_abbr": "SA",
+            "state_name": "South Australia",
+            "participation_rate_pct": 84.3,
+            "estimated_adult_participants": 1332909,
+            "longitude": 138.6,
+            "latitude": -34.93,
+            "label_dx": 0,
+            "label_dy": 18
+          },
+          {
+            "state_abbr": "TAS",
+            "state_name": "Tasmania",
+            "participation_rate_pct": 86.96,
+            "estimated_adult_participants": 420327,
+            "longitude": 147.33,
+            "latitude": -42.88,
+            "label_dx": 0,
+            "label_dy": 18
+          },
+          {
+            "state_abbr": "VIC",
+            "state_name": "Victoria",
+            "participation_rate_pct": 87.46,
+            "estimated_adult_participants": 5082762,
+            "longitude": 144.96,
+            "latitude": -37.81,
+            "label_dx": 0,
+            "label_dy": 18
+          },
+          {
+            "state_abbr": "WA",
+            "state_name": "Western Australia",
+            "participation_rate_pct": 86.81,
+            "estimated_adult_participants": 2143227,
+            "longitude": 115.86,
+            "latitude": -31.95,
+            "label_dx": 0,
+            "label_dy": -18
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 900,
+        "color": "#0f172a",
+        "dy": -18
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state_abbr"
+        }
+      }
+    }
+  ]
+}

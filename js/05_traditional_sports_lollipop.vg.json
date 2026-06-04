@@ -1,10 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
   "config": {
     "view": {
       "stroke": null
@@ -12,58 +8,123 @@
     "axis": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
-      "labelColor": "#1F2937",
-      "titleColor": "#111827",
-      "gridColor": "#E5E7EB",
-      "domainColor": "#CBD5E1",
-      "tickColor": "#CBD5E1",
+      "labelColor": "#334155",
+      "titleColor": "#0f172a",
+      "gridColor": "#e8edf4",
+      "domainColor": "#cbd5e1",
+      "tickColor": "#cbd5e1",
       "labelFontSize": 11,
-      "titleFontSize": 11
+      "titleFontSize": 11,
+      "titlePadding": 10
     },
     "legend": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
       "orient": "bottom",
-      "labelLimit": 160,
+      "labelLimit": 180,
       "labelFontSize": 10,
-      "titleFontSize": 10
+      "titleFontSize": 10,
+      "symbolType": "circle"
     },
     "title": {
       "font": "Inter, Arial, sans-serif",
-      "fontSize": 15,
+      "fontSize": 16,
+      "fontWeight": 800,
       "subtitleFont": "Inter, Arial, sans-serif",
       "subtitleFontSize": 11,
       "anchor": "start",
-      "color": "#111827",
-      "subtitleColor": "#4B5563"
+      "color": "#0f172a",
+      "subtitleColor": "#64748b",
+      "offset": 14
     },
     "bar": {
-      "cornerRadiusEnd": 4
+      "cornerRadiusEnd": 5
+    },
+    "range": {
+      "category": [
+        "#0f766e",
+        "#2563eb",
+        "#f59e0b",
+        "#db2777",
+        "#8b5cf6",
+        "#14b8a6",
+        "#64748b"
+      ]
     }
   },
   "title": {
-    "text": "Traditional sports still matter, but sit below the biggest fitness activities",
-    "subtitle": "Selected traditional sports ranked by adult participation, AusPlay Jan-Dec 2025"
+    "text": "Traditional sports remain visible, but smaller",
+    "subtitle": "Selected traditional sports ranked by adult participation"
   },
   "data": {
-    "url": "data/traditional_sports.csv"
+    "values": [
+      {
+        "activity": "Football/soccer",
+        "participation_rate_pct": 5.62,
+        "estimated_participants": 1273027
+      },
+      {
+        "activity": "Tennis",
+        "participation_rate_pct": 4.94,
+        "estimated_participants": 1118407
+      },
+      {
+        "activity": "Basketball",
+        "participation_rate_pct": 4.53,
+        "estimated_participants": 1024360
+      },
+      {
+        "activity": "Cricket",
+        "participation_rate_pct": 2.49,
+        "estimated_participants": 563967
+      },
+      {
+        "activity": "Australian football",
+        "participation_rate_pct": 2.42,
+        "estimated_participants": 547129
+      },
+      {
+        "activity": "Netball",
+        "participation_rate_pct": 2.11,
+        "estimated_participants": 476973
+      },
+      {
+        "activity": "Badminton",
+        "participation_rate_pct": 1.89,
+        "estimated_participants": 426925
+      },
+      {
+        "activity": "Table tennis",
+        "participation_rate_pct": 1.79,
+        "estimated_participants": 405253
+      }
+    ]
   },
   "width": "container",
   "height": {
-    "step": 30
+    "step": 32
   },
   "layer": [
     {
       "mark": {
         "type": "rule",
-        "color": "#CBD5E1",
+        "stroke": "#cbd5e1",
         "strokeWidth": 3
       },
       "encoding": {
         "y": {
           "field": "activity",
           "type": "nominal",
-          "sort": "-x",
+          "sort": [
+            "Football/soccer",
+            "Tennis",
+            "Basketball",
+            "Cricket",
+            "Australian football",
+            "Netball",
+            "Badminton",
+            "Table tennis"
+          ],
           "title": null
         },
         "x": {
@@ -79,15 +140,24 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 120,
-        "color": "#2563EB",
+        "size": 150,
+        "color": "#2563eb",
         "tooltip": true
       },
       "encoding": {
         "y": {
           "field": "activity",
           "type": "nominal",
-          "sort": "-x",
+          "sort": [
+            "Football/soccer",
+            "Tennis",
+            "Basketball",
+            "Cricket",
+            "Australian football",
+            "Netball",
+            "Badminton",
+            "Table tennis"
+          ],
           "title": null
         },
         "x": {
@@ -97,7 +167,7 @@
           "scale": {
             "domain": [
               0,
-              7
+              6.2
             ]
           }
         },
@@ -125,13 +195,23 @@
         "align": "left",
         "dx": 8,
         "fontSize": 11,
+        "fontWeight": 700,
         "color": "#475569"
       },
       "encoding": {
         "y": {
           "field": "activity",
           "type": "nominal",
-          "sort": "-x",
+          "sort": [
+            "Football/soccer",
+            "Tennis",
+            "Basketball",
+            "Cricket",
+            "Australian football",
+            "Netball",
+            "Badminton",
+            "Table tennis"
+          ],
           "title": null
         },
         "x": {
@@ -144,11 +224,5 @@
         }
       }
     }
-  ],
-  "resolve": {
-    "scale": {
-      "x": "shared",
-      "y": "shared"
-    }
-  }
+  ]
 }

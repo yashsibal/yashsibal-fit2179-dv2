@@ -1,0 +1,1 @@
+The map uses a simplified Australia outline for geographic context and approximate state/territory capital coordinates for symbol placement. Participation values come from AusPlay.

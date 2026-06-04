@@ -1,10 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
   "config": {
     "view": {
       "stroke": null
@@ -12,44 +8,207 @@
     "axis": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
-      "labelColor": "#1F2937",
-      "titleColor": "#111827",
-      "gridColor": "#E5E7EB",
-      "domainColor": "#CBD5E1",
-      "tickColor": "#CBD5E1",
+      "labelColor": "#334155",
+      "titleColor": "#0f172a",
+      "gridColor": "#e8edf4",
+      "domainColor": "#cbd5e1",
+      "tickColor": "#cbd5e1",
       "labelFontSize": 11,
-      "titleFontSize": 11
+      "titleFontSize": 11,
+      "titlePadding": 10
     },
     "legend": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
       "orient": "bottom",
-      "labelLimit": 160,
+      "labelLimit": 180,
       "labelFontSize": 10,
-      "titleFontSize": 10
+      "titleFontSize": 10,
+      "symbolType": "circle"
     },
     "title": {
       "font": "Inter, Arial, sans-serif",
-      "fontSize": 15,
+      "fontSize": 16,
+      "fontWeight": 800,
       "subtitleFont": "Inter, Arial, sans-serif",
       "subtitleFontSize": 11,
       "anchor": "start",
-      "color": "#111827",
-      "subtitleColor": "#4B5563"
+      "color": "#0f172a",
+      "subtitleColor": "#64748b",
+      "offset": 14
     },
     "bar": {
-      "cornerRadiusEnd": 4
+      "cornerRadiusEnd": 5
+    },
+    "range": {
+      "category": [
+        "#0f766e",
+        "#2563eb",
+        "#f59e0b",
+        "#db2777",
+        "#8b5cf6",
+        "#14b8a6",
+        "#64748b"
+      ]
     }
   },
   "title": {
-    "text": "Older age groups lean more toward non-sport activity",
-    "subtitle": "Adult participation by age group and sport/non-sport relationship, AusPlay Jan-Dec 2025"
+    "text": "Age changes the sport/non-sport balance",
+    "subtitle": "Older adults lean more toward non-sport activity"
   },
   "data": {
-    "url": "data/sport_non_sport_by_age.csv"
+    "values": [
+      {
+        "age_group": "15-17",
+        "category": "Sport-related only",
+        "participation_rate_pct": 22.61,
+        "age_order": 1,
+        "category_order": 1
+      },
+      {
+        "age_group": "15-17",
+        "category": "Non-sport only",
+        "participation_rate_pct": 12.78,
+        "age_order": 1,
+        "category_order": 2
+      },
+      {
+        "age_group": "15-17",
+        "category": "Both sport and non-sport",
+        "participation_rate_pct": 52.04,
+        "age_order": 1,
+        "category_order": 3
+      },
+      {
+        "age_group": "18-24",
+        "category": "Sport-related only",
+        "participation_rate_pct": 20.48,
+        "age_order": 2,
+        "category_order": 1
+      },
+      {
+        "age_group": "18-24",
+        "category": "Non-sport only",
+        "participation_rate_pct": 19.88,
+        "age_order": 2,
+        "category_order": 2
+      },
+      {
+        "age_group": "18-24",
+        "category": "Both sport and non-sport",
+        "participation_rate_pct": 48.38,
+        "age_order": 2,
+        "category_order": 3
+      },
+      {
+        "age_group": "25-34",
+        "category": "Sport-related only",
+        "participation_rate_pct": 17.77,
+        "age_order": 3,
+        "category_order": 1
+      },
+      {
+        "age_group": "25-34",
+        "category": "Non-sport only",
+        "participation_rate_pct": 24.69,
+        "age_order": 3,
+        "category_order": 2
+      },
+      {
+        "age_group": "25-34",
+        "category": "Both sport and non-sport",
+        "participation_rate_pct": 46.97,
+        "age_order": 3,
+        "category_order": 3
+      },
+      {
+        "age_group": "35-44",
+        "category": "Sport-related only",
+        "participation_rate_pct": 15.24,
+        "age_order": 4,
+        "category_order": 1
+      },
+      {
+        "age_group": "35-44",
+        "category": "Non-sport only",
+        "participation_rate_pct": 32.18,
+        "age_order": 4,
+        "category_order": 2
+      },
+      {
+        "age_group": "35-44",
+        "category": "Both sport and non-sport",
+        "participation_rate_pct": 41.28,
+        "age_order": 4,
+        "category_order": 3
+      },
+      {
+        "age_group": "45-54",
+        "category": "Sport-related only",
+        "participation_rate_pct": 11.11,
+        "age_order": 5,
+        "category_order": 1
+      },
+      {
+        "age_group": "45-54",
+        "category": "Non-sport only",
+        "participation_rate_pct": 40.2,
+        "age_order": 5,
+        "category_order": 2
+      },
+      {
+        "age_group": "45-54",
+        "category": "Both sport and non-sport",
+        "participation_rate_pct": 37.95,
+        "age_order": 5,
+        "category_order": 3
+      },
+      {
+        "age_group": "55-64",
+        "category": "Sport-related only",
+        "participation_rate_pct": 7.2,
+        "age_order": 6,
+        "category_order": 1
+      },
+      {
+        "age_group": "55-64",
+        "category": "Non-sport only",
+        "participation_rate_pct": 44.91,
+        "age_order": 6,
+        "category_order": 2
+      },
+      {
+        "age_group": "55-64",
+        "category": "Both sport and non-sport",
+        "participation_rate_pct": 35.34,
+        "age_order": 6,
+        "category_order": 3
+      },
+      {
+        "age_group": "65+",
+        "category": "Sport-related only",
+        "participation_rate_pct": 5.9,
+        "age_order": 7,
+        "category_order": 1
+      },
+      {
+        "age_group": "65+",
+        "category": "Non-sport only",
+        "participation_rate_pct": 48.54,
+        "age_order": 7,
+        "category_order": 2
+      },
+      {
+        "age_group": "65+",
+        "category": "Both sport and non-sport",
+        "participation_rate_pct": 20.99,
+        "age_order": 7,
+        "category_order": 3
+      }
+    ]
   },
   "width": "container",
-  "height": 260,
+  "height": 240,
   "mark": {
     "type": "bar",
     "tooltip": true
@@ -86,11 +245,15 @@
           "Both sport and non-sport"
         ],
         "range": [
-          "#2563EB",
-          "#10B981",
-          "#8B5CF6"
+          "#2563eb",
+          "#10b981",
+          "#8b5cf6"
         ]
       }
+    },
+    "order": {
+      "field": "category_order",
+      "type": "quantitative"
     },
     "tooltip": [
       {

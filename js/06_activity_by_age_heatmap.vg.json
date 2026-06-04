@@ -1,10 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
   "config": {
     "view": {
       "stroke": null
@@ -12,44 +8,697 @@
     "axis": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
-      "labelColor": "#1F2937",
-      "titleColor": "#111827",
-      "gridColor": "#E5E7EB",
-      "domainColor": "#CBD5E1",
-      "tickColor": "#CBD5E1",
+      "labelColor": "#334155",
+      "titleColor": "#0f172a",
+      "gridColor": "#e8edf4",
+      "domainColor": "#cbd5e1",
+      "tickColor": "#cbd5e1",
       "labelFontSize": 11,
-      "titleFontSize": 11
+      "titleFontSize": 11,
+      "titlePadding": 10
     },
     "legend": {
       "labelFont": "Inter, Arial, sans-serif",
       "titleFont": "Inter, Arial, sans-serif",
       "orient": "bottom",
-      "labelLimit": 160,
+      "labelLimit": 180,
       "labelFontSize": 10,
-      "titleFontSize": 10
+      "titleFontSize": 10,
+      "symbolType": "circle"
     },
     "title": {
       "font": "Inter, Arial, sans-serif",
-      "fontSize": 15,
+      "fontSize": 16,
+      "fontWeight": 800,
       "subtitleFont": "Inter, Arial, sans-serif",
       "subtitleFontSize": 11,
       "anchor": "start",
-      "color": "#111827",
-      "subtitleColor": "#4B5563"
+      "color": "#0f172a",
+      "subtitleColor": "#64748b",
+      "offset": 14
     },
     "bar": {
-      "cornerRadiusEnd": 4
+      "cornerRadiusEnd": 5
+    },
+    "range": {
+      "category": [
+        "#0f766e",
+        "#2563eb",
+        "#f59e0b",
+        "#db2777",
+        "#8b5cf6",
+        "#14b8a6",
+        "#64748b"
+      ]
     }
   },
   "title": {
-    "text": "Age changes the activity mix",
+    "text": "The activity mix changes across life stages",
     "subtitle": "Darker cells show higher adult participation rates within each activity and age group"
   },
   "data": {
-    "url": "data/activity_by_age.csv"
+    "values": [
+      {
+        "activity": "Walking",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "15-17",
+        "participation_rate_pct": 30.35,
+        "age_order": 1
+      },
+      {
+        "activity": "Walking",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "18-24",
+        "participation_rate_pct": 34.19,
+        "age_order": 2
+      },
+      {
+        "activity": "Walking",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "25-34",
+        "participation_rate_pct": 41.86,
+        "age_order": 3
+      },
+      {
+        "activity": "Walking",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "35-44",
+        "participation_rate_pct": 47.55,
+        "age_order": 4
+      },
+      {
+        "activity": "Walking",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "45-54",
+        "participation_rate_pct": 58.67,
+        "age_order": 5
+      },
+      {
+        "activity": "Walking",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "55-64",
+        "participation_rate_pct": 66.03,
+        "age_order": 6
+      },
+      {
+        "activity": "Walking",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "65+",
+        "participation_rate_pct": 55.82,
+        "age_order": 7
+      },
+      {
+        "activity": "Fitness/Gym",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "15-17",
+        "participation_rate_pct": 37.32,
+        "age_order": 1
+      },
+      {
+        "activity": "Fitness/Gym",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "18-24",
+        "participation_rate_pct": 43.44,
+        "age_order": 2
+      },
+      {
+        "activity": "Fitness/Gym",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "25-34",
+        "participation_rate_pct": 42.06,
+        "age_order": 3
+      },
+      {
+        "activity": "Fitness/Gym",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "35-44",
+        "participation_rate_pct": 36.39,
+        "age_order": 4
+      },
+      {
+        "activity": "Fitness/Gym",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "45-54",
+        "participation_rate_pct": 32.93,
+        "age_order": 5
+      },
+      {
+        "activity": "Fitness/Gym",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "55-64",
+        "participation_rate_pct": 29.52,
+        "age_order": 6
+      },
+      {
+        "activity": "Fitness/Gym",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "65+",
+        "participation_rate_pct": 23.68,
+        "age_order": 7
+      },
+      {
+        "activity": "Running/jogging",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "15-17",
+        "participation_rate_pct": 26.57,
+        "age_order": 1
+      },
+      {
+        "activity": "Running/jogging",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "18-24",
+        "participation_rate_pct": 26.65,
+        "age_order": 2
+      },
+      {
+        "activity": "Running/jogging",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "25-34",
+        "participation_rate_pct": 27.66,
+        "age_order": 3
+      },
+      {
+        "activity": "Running/jogging",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "35-44",
+        "participation_rate_pct": 20.85,
+        "age_order": 4
+      },
+      {
+        "activity": "Running/jogging",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "45-54",
+        "participation_rate_pct": 15.77,
+        "age_order": 5
+      },
+      {
+        "activity": "Running/jogging",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "55-64",
+        "participation_rate_pct": 8.46,
+        "age_order": 6
+      },
+      {
+        "activity": "Running/jogging",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "65+",
+        "participation_rate_pct": 1.84,
+        "age_order": 7
+      },
+      {
+        "activity": "Swimming",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "15-17",
+        "participation_rate_pct": 17.62,
+        "age_order": 1
+      },
+      {
+        "activity": "Swimming",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "18-24",
+        "participation_rate_pct": 16.34,
+        "age_order": 2
+      },
+      {
+        "activity": "Swimming",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "25-34",
+        "participation_rate_pct": 16.58,
+        "age_order": 3
+      },
+      {
+        "activity": "Swimming",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "35-44",
+        "participation_rate_pct": 18.31,
+        "age_order": 4
+      },
+      {
+        "activity": "Swimming",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "45-54",
+        "participation_rate_pct": 16.66,
+        "age_order": 5
+      },
+      {
+        "activity": "Swimming",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "55-64",
+        "participation_rate_pct": 15.99,
+        "age_order": 6
+      },
+      {
+        "activity": "Swimming",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "65+",
+        "participation_rate_pct": 9.74,
+        "age_order": 7
+      },
+      {
+        "activity": "Cycling",
+        "activity_group": "Outdoor recreation",
+        "age_group": "15-17",
+        "participation_rate_pct": 6.66,
+        "age_order": 1
+      },
+      {
+        "activity": "Cycling",
+        "activity_group": "Outdoor recreation",
+        "age_group": "18-24",
+        "participation_rate_pct": 5.59,
+        "age_order": 2
+      },
+      {
+        "activity": "Cycling",
+        "activity_group": "Outdoor recreation",
+        "age_group": "25-34",
+        "participation_rate_pct": 7.12,
+        "age_order": 3
+      },
+      {
+        "activity": "Cycling",
+        "activity_group": "Outdoor recreation",
+        "age_group": "35-44",
+        "participation_rate_pct": 9.26,
+        "age_order": 4
+      },
+      {
+        "activity": "Cycling",
+        "activity_group": "Outdoor recreation",
+        "age_group": "45-54",
+        "participation_rate_pct": 11.59,
+        "age_order": 5
+      },
+      {
+        "activity": "Cycling",
+        "activity_group": "Outdoor recreation",
+        "age_group": "55-64",
+        "participation_rate_pct": 11.95,
+        "age_order": 6
+      },
+      {
+        "activity": "Cycling",
+        "activity_group": "Outdoor recreation",
+        "age_group": "65+",
+        "participation_rate_pct": 5.58,
+        "age_order": 7
+      },
+      {
+        "activity": "Football/soccer",
+        "activity_group": "Traditional sport",
+        "age_group": "15-17",
+        "participation_rate_pct": 17.01,
+        "age_order": 1
+      },
+      {
+        "activity": "Football/soccer",
+        "activity_group": "Traditional sport",
+        "age_group": "18-24",
+        "participation_rate_pct": 12.33,
+        "age_order": 2
+      },
+      {
+        "activity": "Football/soccer",
+        "activity_group": "Traditional sport",
+        "age_group": "25-34",
+        "participation_rate_pct": 9.36,
+        "age_order": 3
+      },
+      {
+        "activity": "Football/soccer",
+        "activity_group": "Traditional sport",
+        "age_group": "35-44",
+        "participation_rate_pct": 6.94,
+        "age_order": 4
+      },
+      {
+        "activity": "Football/soccer",
+        "activity_group": "Traditional sport",
+        "age_group": "45-54",
+        "participation_rate_pct": 3.28,
+        "age_order": 5
+      },
+      {
+        "activity": "Football/soccer",
+        "activity_group": "Traditional sport",
+        "age_group": "55-64",
+        "participation_rate_pct": 0.95,
+        "age_order": 6
+      },
+      {
+        "activity": "Football/soccer",
+        "activity_group": "Traditional sport",
+        "age_group": "65+",
+        "participation_rate_pct": 0.14,
+        "age_order": 7
+      },
+      {
+        "activity": "Basketball",
+        "activity_group": "Traditional sport",
+        "age_group": "15-17",
+        "participation_rate_pct": 17.28,
+        "age_order": 1
+      },
+      {
+        "activity": "Basketball",
+        "activity_group": "Traditional sport",
+        "age_group": "18-24",
+        "participation_rate_pct": 11.69,
+        "age_order": 2
+      },
+      {
+        "activity": "Basketball",
+        "activity_group": "Traditional sport",
+        "age_group": "25-34",
+        "participation_rate_pct": 6.16,
+        "age_order": 3
+      },
+      {
+        "activity": "Basketball",
+        "activity_group": "Traditional sport",
+        "age_group": "35-44",
+        "participation_rate_pct": 4.84,
+        "age_order": 4
+      },
+      {
+        "activity": "Basketball",
+        "activity_group": "Traditional sport",
+        "age_group": "45-54",
+        "participation_rate_pct": 2.62,
+        "age_order": 5
+      },
+      {
+        "activity": "Basketball",
+        "activity_group": "Traditional sport",
+        "age_group": "55-64",
+        "participation_rate_pct": 0.78,
+        "age_order": 6
+      },
+      {
+        "activity": "Basketball",
+        "activity_group": "Traditional sport",
+        "age_group": "65+",
+        "participation_rate_pct": 0.21,
+        "age_order": 7
+      },
+      {
+        "activity": "Tennis",
+        "activity_group": "Traditional sport",
+        "age_group": "15-17",
+        "participation_rate_pct": 9.45,
+        "age_order": 1
+      },
+      {
+        "activity": "Tennis",
+        "activity_group": "Traditional sport",
+        "age_group": "18-24",
+        "participation_rate_pct": 7.48,
+        "age_order": 2
+      },
+      {
+        "activity": "Tennis",
+        "activity_group": "Traditional sport",
+        "age_group": "25-34",
+        "participation_rate_pct": 6.48,
+        "age_order": 3
+      },
+      {
+        "activity": "Tennis",
+        "activity_group": "Traditional sport",
+        "age_group": "35-44",
+        "participation_rate_pct": 5.28,
+        "age_order": 4
+      },
+      {
+        "activity": "Tennis",
+        "activity_group": "Traditional sport",
+        "age_group": "45-54",
+        "participation_rate_pct": 5.27,
+        "age_order": 5
+      },
+      {
+        "activity": "Tennis",
+        "activity_group": "Traditional sport",
+        "age_group": "55-64",
+        "participation_rate_pct": 3.29,
+        "age_order": 6
+      },
+      {
+        "activity": "Tennis",
+        "activity_group": "Traditional sport",
+        "age_group": "65+",
+        "participation_rate_pct": 1.92,
+        "age_order": 7
+      },
+      {
+        "activity": "Australian football",
+        "activity_group": "Traditional sport",
+        "age_group": "15-17",
+        "participation_rate_pct": 6.04,
+        "age_order": 1
+      },
+      {
+        "activity": "Australian football",
+        "activity_group": "Traditional sport",
+        "age_group": "18-24",
+        "participation_rate_pct": 6.01,
+        "age_order": 2
+      },
+      {
+        "activity": "Australian football",
+        "activity_group": "Traditional sport",
+        "age_group": "25-34",
+        "participation_rate_pct": 4.75,
+        "age_order": 3
+      },
+      {
+        "activity": "Australian football",
+        "activity_group": "Traditional sport",
+        "age_group": "35-44",
+        "participation_rate_pct": 2.07,
+        "age_order": 4
+      },
+      {
+        "activity": "Australian football",
+        "activity_group": "Traditional sport",
+        "age_group": "45-54",
+        "participation_rate_pct": 1.38,
+        "age_order": 5
+      },
+      {
+        "activity": "Australian football",
+        "activity_group": "Traditional sport",
+        "age_group": "55-64",
+        "participation_rate_pct": 0.45,
+        "age_order": 6
+      },
+      {
+        "activity": "Australian football",
+        "activity_group": "Traditional sport",
+        "age_group": "65+",
+        "participation_rate_pct": 0.07,
+        "age_order": 7
+      },
+      {
+        "activity": "Cricket",
+        "activity_group": "Traditional sport",
+        "age_group": "15-17",
+        "participation_rate_pct": 8.43,
+        "age_order": 1
+      },
+      {
+        "activity": "Cricket",
+        "activity_group": "Traditional sport",
+        "age_group": "18-24",
+        "participation_rate_pct": 4.83,
+        "age_order": 2
+      },
+      {
+        "activity": "Cricket",
+        "activity_group": "Traditional sport",
+        "age_group": "25-34",
+        "participation_rate_pct": 3.54,
+        "age_order": 3
+      },
+      {
+        "activity": "Cricket",
+        "activity_group": "Traditional sport",
+        "age_group": "35-44",
+        "participation_rate_pct": 2.67,
+        "age_order": 4
+      },
+      {
+        "activity": "Cricket",
+        "activity_group": "Traditional sport",
+        "age_group": "45-54",
+        "participation_rate_pct": 1.97,
+        "age_order": 5
+      },
+      {
+        "activity": "Cricket",
+        "activity_group": "Traditional sport",
+        "age_group": "55-64",
+        "participation_rate_pct": 0.99,
+        "age_order": 6
+      },
+      {
+        "activity": "Cricket",
+        "activity_group": "Traditional sport",
+        "age_group": "65+",
+        "participation_rate_pct": 0.31,
+        "age_order": 7
+      },
+      {
+        "activity": "Netball",
+        "activity_group": "Traditional sport",
+        "age_group": "15-17",
+        "participation_rate_pct": 8.14,
+        "age_order": 1
+      },
+      {
+        "activity": "Netball",
+        "activity_group": "Traditional sport",
+        "age_group": "18-24",
+        "participation_rate_pct": 5.52,
+        "age_order": 2
+      },
+      {
+        "activity": "Netball",
+        "activity_group": "Traditional sport",
+        "age_group": "25-34",
+        "participation_rate_pct": 3.06,
+        "age_order": 3
+      },
+      {
+        "activity": "Netball",
+        "activity_group": "Traditional sport",
+        "age_group": "35-44",
+        "participation_rate_pct": 2.13,
+        "age_order": 4
+      },
+      {
+        "activity": "Netball",
+        "activity_group": "Traditional sport",
+        "age_group": "45-54",
+        "participation_rate_pct": 1.16,
+        "age_order": 5
+      },
+      {
+        "activity": "Netball",
+        "activity_group": "Traditional sport",
+        "age_group": "55-64",
+        "participation_rate_pct": 0.31,
+        "age_order": 6
+      },
+      {
+        "activity": "Netball",
+        "activity_group": "Traditional sport",
+        "age_group": "65+",
+        "participation_rate_pct": 0.05,
+        "age_order": 7
+      },
+      {
+        "activity": "Yoga",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "15-17",
+        "participation_rate_pct": 2.6,
+        "age_order": 1
+      },
+      {
+        "activity": "Yoga",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "18-24",
+        "participation_rate_pct": 3.61,
+        "age_order": 2
+      },
+      {
+        "activity": "Yoga",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "25-34",
+        "participation_rate_pct": 6.43,
+        "age_order": 3
+      },
+      {
+        "activity": "Yoga",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "35-44",
+        "participation_rate_pct": 6.28,
+        "age_order": 4
+      },
+      {
+        "activity": "Yoga",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "45-54",
+        "participation_rate_pct": 6.11,
+        "age_order": 5
+      },
+      {
+        "activity": "Yoga",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "55-64",
+        "participation_rate_pct": 5.57,
+        "age_order": 6
+      },
+      {
+        "activity": "Yoga",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "65+",
+        "participation_rate_pct": 3.16,
+        "age_order": 7
+      },
+      {
+        "activity": "Pilates",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "15-17",
+        "participation_rate_pct": 3.75,
+        "age_order": 1
+      },
+      {
+        "activity": "Pilates",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "18-24",
+        "participation_rate_pct": 8.76,
+        "age_order": 2
+      },
+      {
+        "activity": "Pilates",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "25-34",
+        "participation_rate_pct": 11.02,
+        "age_order": 3
+      },
+      {
+        "activity": "Pilates",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "35-44",
+        "participation_rate_pct": 8.71,
+        "age_order": 4
+      },
+      {
+        "activity": "Pilates",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "45-54",
+        "participation_rate_pct": 7.13,
+        "age_order": 5
+      },
+      {
+        "activity": "Pilates",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "55-64",
+        "participation_rate_pct": 6.26,
+        "age_order": 6
+      },
+      {
+        "activity": "Pilates",
+        "activity_group": "Fitness / lifestyle",
+        "age_group": "65+",
+        "participation_rate_pct": 3.19,
+        "age_order": 7
+      }
+    ]
   },
   "width": "container",
-  "height": 390,
+  "height": 410,
   "mark": {
     "type": "rect",
     "tooltip": true
@@ -73,7 +722,10 @@
         "Netball",
         "Yoga",
         "Pilates"
-      ]
+      ],
+      "axis": {
+        "labelLimit": 150
+      }
     },
     "x": {
       "field": "age_group",
